@@ -69,13 +69,16 @@ class BillbeeapiClient(object):
     def __init__(self, timeout=60, max_retries=3, backoff_factor=0,
                  environment=Environment.PRODUCTION,
                  basic_auth_user_name='TODO: Replace',
-                 basic_auth_password='TODO: Replace', config=None):
+                 basic_auth_password='TODO: Replace',
+                 api_key='TODO: Replace',
+                 config=None):
         if config is None:
             self.config = Configuration(timeout=timeout,
                                         max_retries=max_retries,
                                         backoff_factor=backoff_factor,
                                         environment=environment,
                                         basic_auth_user_name=basic_auth_user_name,
-                                        basic_auth_password=basic_auth_password)
+                                        basic_auth_password=basic_auth_password,
+                                        api_key=api_key)
         else:
             self.config = config

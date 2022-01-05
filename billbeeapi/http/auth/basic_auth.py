@@ -28,3 +28,4 @@ class BasicAuth:
         encoded = base64.b64encode(str.encode(joined)).decode('iso-8859-1')
         header_value = "Basic {}".format(encoded)
         http_request.headers["Authorization"] = header_value
+        http_request.headers['X-Billbee-Api-Key'] = config.api_key

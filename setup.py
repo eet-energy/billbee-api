@@ -11,8 +11,8 @@ else:
         long_description = fh.read()
 
 setup(
-    name='billbee-1',
-    version='1.0.0',
+    name='billbee-api',
+    version='1.1.0',
     description='Python client library for Billbee API',
     long_description=long_description,
     long_description_content_type="text/markdown",

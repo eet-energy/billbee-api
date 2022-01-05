@@ -30,14 +30,21 @@ When you exceed these 2 calls, the API will return a HTTP 429 status code
 ### Install the Package
 
 The package is compatible with Python versions `2 >=2.7.9` and `3 >=3.4`.
-Install the package from PyPi using the following pip command:
 
+Download the wheel file an using the following pip command
 ```python
-pip install billbee-1==1.0.0
+pip install billbee_api-1.1.0-py3-none-any.whl
 ```
 
-You can also view the package at:
+#### package note
+
+This is a fork from 
 https://pypi.python.org/pypi/billbee-1
+which you can install from PyPi using the following pip command.
+```python
+pip install billbee-api
+```
+But this package does not support API_KEYs 
 
 ### Initialize the API Client
 
@@ -60,12 +67,13 @@ from billbeeapi.configuration import Environment
 client = BillbeeapiClient(
     basic_auth_user_name='BasicAuthUserName',
     basic_auth_password='BasicAuthPassword',
+    api_key='ApiKey'
     environment = ,)
 ```
 
 ### Authorization
 
-This API uses `Basic Authentication`.
+This API uses `Basic Authentication` and the API-KEY in the HTTP header `X-Billbee-Api-Key`
 
 ## Client Class Documentation
 

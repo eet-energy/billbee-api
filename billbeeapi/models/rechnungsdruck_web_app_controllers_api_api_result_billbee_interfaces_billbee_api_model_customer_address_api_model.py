@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 billbeeapi
 
@@ -10,7 +8,7 @@ from billbeeapi.models.billbee_interfaces_billbee_api_model_customer_address_api
 )
 
 
-class RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelCustomerAddressApiModel(object):
+class RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelCustomerAddressApiModel:
 
     """Implementation of the 'Rechnungsdruck.WebApp.Controllers.Api.ApiResult[Billbee.Interfaces.BillbeeAPI.Model.CustomerAddressApiModel]' model.
 

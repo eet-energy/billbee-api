@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 billbeeapi
 
@@ -10,9 +8,7 @@ from billbeeapi.models.billbee_interfaces_billbee_api_model_article_api_custom_f
 )
 
 
-class RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelArticleApiCustomFieldDefinitionModel(
-    object
-):
+class RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelArticleApiCustomFieldDefinitionModel:
 
     """Implementation of the 'Rechnungsdruck.WebApp.Controllers.Api.ApiResult[Billbee.Interfaces.BillbeeAPI.Model.ArticleApiCustomFieldDefinitionModel]' model.
 

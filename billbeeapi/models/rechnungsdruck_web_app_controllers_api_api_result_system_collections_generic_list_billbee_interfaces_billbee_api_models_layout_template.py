@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 billbeeapi
 
@@ -10,9 +8,7 @@ from billbeeapi.models.billbee_interfaces_billbee_api_models_layout_template imp
 )
 
 
-class RechnungsdruckWebAppControllersApiApiResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelsLayoutTemplate(
-    object
-):
+class RechnungsdruckWebAppControllersApiApiResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelsLayoutTemplate:
 
     """Implementation of the 'Rechnungsdruck.WebApp.Controllers.Api.ApiResult[System.Collections.Generic.List[Billbee.Interfaces.BillbeeAPI.Models.LayoutTemplate]]' model.
 

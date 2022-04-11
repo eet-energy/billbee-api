@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 billbeeapi
 
@@ -10,7 +8,7 @@ from billbeeapi.models.billbee_interfaces_billbee_api_model_get_reserved_amount_
 )
 
 
-class RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelGetReservedAmountResponseData(object):
+class RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelGetReservedAmountResponseData:
 
     """Implementation of the 'Rechnungsdruck.WebApp.Controllers.Api.ApiResult[Billbee.Interfaces.BillbeeAPI.Model.GetReservedAmountResponseData]' model.
 

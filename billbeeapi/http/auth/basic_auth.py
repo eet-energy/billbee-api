@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 billbeeapi
 
@@ -23,8 +21,8 @@ class BasicAuth:
         """
         username = config.basic_auth_user_name
         password = config.basic_auth_password
-        joined = "{}:{}".format(username, password)
+        joined = f"{username}:{password}"
         encoded = base64.b64encode(str.encode(joined)).decode("iso-8859-1")
-        header_value = "Basic {}".format(encoded)
+        header_value = f"Basic {encoded}"
         http_request.headers["Authorization"] = header_value
         http_request.headers["X-Billbee-Api-Key"] = config.api_key

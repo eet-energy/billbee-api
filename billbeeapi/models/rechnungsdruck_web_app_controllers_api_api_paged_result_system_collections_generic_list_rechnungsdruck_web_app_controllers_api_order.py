@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 billbeeapi
 
@@ -11,9 +9,7 @@ from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_paged_result_p
 from billbeeapi.models.rechnungsdruck_web_app_controllers_api_order import RechnungsdruckWebAppControllersApiOrder
 
 
-class RechnungsdruckWebAppControllersApiApiPagedResultSystemCollectionsGenericListRechnungsdruckWebAppControllersApiOrder(
-    object
-):
+class RechnungsdruckWebAppControllersApiApiPagedResultSystemCollectionsGenericListRechnungsdruckWebAppControllersApiOrder:
 
     """Implementation of the 'Rechnungsdruck.WebApp.Controllers.Api.ApiPagedResult[System.Collections.Generic.List[Rechnungsdruck.WebApp.Controllers.Api.Order]]' model.
 

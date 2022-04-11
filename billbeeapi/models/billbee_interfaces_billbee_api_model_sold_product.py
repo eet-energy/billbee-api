@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 billbeeapi
 
@@ -10,7 +8,7 @@ from billbeeapi.models.billbee_interfaces_billbee_api_model_product_image import
 )
 
 
-class BillbeeInterfacesBillbeeAPIModelSoldProduct(object):
+class BillbeeInterfacesBillbeeAPIModelSoldProduct:
 
     """Implementation of the 'Billbee.Interfaces.BillbeeAPI.Model.SoldProduct' model.
 

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 billbeeapi
 
@@ -10,9 +8,7 @@ from billbeeapi.models.rechnungsdruck_web_app_controllers_api_search_controller_
 )
 
 
-class RechnungsdruckWebAppControllersApiApiResultRechnungsdruckWebAppControllersApiSearchControllerSearchResultsModel(
-    object
-):
+class RechnungsdruckWebAppControllersApiApiResultRechnungsdruckWebAppControllersApiSearchControllerSearchResultsModel:
 
     """Implementation of the 'Rechnungsdruck.WebApp.Controllers.Api.ApiResult[Rechnungsdruck.WebApp.Controllers.Api.SearchController.SearchResultsModel]' model.
 

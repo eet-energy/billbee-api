@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 billbeeapi
 
@@ -25,7 +23,7 @@ from billbeeapi.models.billbee_interfaces_order_history_entry import BillbeeInte
 from billbeeapi.models.billbee_interfaces_shipping_product_service import BillbeeInterfacesShippingProductService
 
 
-class BillbeeInterfacesBillbeeAPIModelOrder(object):
+class BillbeeInterfacesBillbeeAPIModelOrder:
 
     """Implementation of the 'Billbee.Interfaces.BillbeeAPI.Model.Order' model.
 

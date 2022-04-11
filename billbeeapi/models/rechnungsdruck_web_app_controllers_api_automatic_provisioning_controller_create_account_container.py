@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 billbeeapi
 
@@ -10,7 +8,7 @@ from billbeeapi.models.rechnungsdruck_web_app_controllers_api_automatic_provisio
 )
 
 
-class RechnungsdruckWebAppControllersApiAutomaticProvisioningControllerCreateAccountContainer(object):
+class RechnungsdruckWebAppControllersApiAutomaticProvisioningControllerCreateAccountContainer:
 
     """Implementation of the 'Rechnungsdruck.WebApp.Controllers.Api.AutomaticProvisioningController.CreateAccountContainer' model.
 

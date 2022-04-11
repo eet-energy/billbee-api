@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 billbeeapi
 
@@ -10,7 +8,7 @@ from billbeeapi.http.http_method_enum import HttpMethodEnum
 from billbeeapi.http.http_request import HttpRequest
 
 
-class HttpClient(object):
+class HttpClient:
 
     """An interface for the methods that an HTTP Client must implement
 

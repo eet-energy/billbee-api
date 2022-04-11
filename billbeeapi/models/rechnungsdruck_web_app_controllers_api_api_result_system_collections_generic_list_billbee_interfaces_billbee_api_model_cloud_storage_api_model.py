@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 billbeeapi
 
@@ -10,9 +8,7 @@ from billbeeapi.models.billbee_interfaces_billbee_api_model_cloud_storage_api_mo
 )
 
 
-class RechnungsdruckWebAppControllersApiApiResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelCloudStorageApiModel(
-    object
-):
+class RechnungsdruckWebAppControllersApiApiResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelCloudStorageApiModel:
 
     """Implementation of the 'Rechnungsdruck.WebApp.Controllers.Api.ApiResult[System.Collections.Generic.List[Billbee.Interfaces.BillbeeAPI.Model.CloudStorageApiModel]]' model.
 

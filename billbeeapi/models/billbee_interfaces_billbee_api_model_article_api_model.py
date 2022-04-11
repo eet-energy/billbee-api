@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 billbeeapi
 
@@ -26,7 +24,7 @@ from billbeeapi.models.billbee_interfaces_billbee_api_model_stock_article_api_mo
 from billbeeapi.models.billbee_interfaces_order_multi_language_string import BillbeeInterfacesOrderMultiLanguageString
 
 
-class BillbeeInterfacesBillbeeAPIModelArticleApiModel(object):
+class BillbeeInterfacesBillbeeAPIModelArticleApiModel:
 
     """Implementation of the 'Billbee.Interfaces.BillbeeAPI.Model.ArticleApiModel' model.
 

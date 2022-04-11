@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 billbeeapi
 
@@ -10,9 +8,7 @@ from billbeeapi.models.billbee_interfaces_billbee_api_model_article_image_relati
 )
 
 
-class RechnungsdruckWebAppControllersApiApiResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelArticleImageRelationApiModel(
-    object
-):
+class RechnungsdruckWebAppControllersApiApiResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelArticleImageRelationApiModel:
 
     """Implementation of the 'Rechnungsdruck.WebApp.Controllers.Api.ApiResult[System.Collections.Generic.List[Billbee.Interfaces.BillbeeAPI.Model.ArticleImageRelationApiModel]]' model.
 

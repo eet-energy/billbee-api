@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 billbeeapi
 
@@ -10,7 +8,7 @@ from billbeeapi.models.system_collections_generic_key_value_pair_system_string_s
 )
 
 
-class BillbeeInterfacesShippingProductService(object):
+class BillbeeInterfacesShippingProductService:
 
     """Implementation of the 'Billbee.Interfaces.Shipping.ProductService' model.
 

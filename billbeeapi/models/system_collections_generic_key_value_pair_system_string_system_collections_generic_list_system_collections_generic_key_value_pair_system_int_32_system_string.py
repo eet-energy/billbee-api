@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 billbeeapi
 
@@ -10,9 +8,7 @@ from billbeeapi.models.system_collections_generic_key_value_pair_system_int_32_s
 )
 
 
-class SystemCollectionsGenericKeyValuePairSystemStringSystemCollectionsGenericListSystemCollectionsGenericKeyValuePairSystemInt32SystemString(
-    object
-):
+class SystemCollectionsGenericKeyValuePairSystemStringSystemCollectionsGenericListSystemCollectionsGenericKeyValuePairSystemInt32SystemString:
 
     """Implementation of the 'System.Collections.Generic.KeyValuePair[System.String,System.Collections.Generic.List[System.Collections.Generic.KeyValuePair[System.Int32,System.String]]]' model.
 

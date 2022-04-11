@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 billbeeapi
 
@@ -15,7 +13,7 @@ from billbeeapi.models.billbee_interfaces_shipping_shipment_data_dimensions impo
 )
 
 
-class BillbeeInterfacesBillbeeAPIModelCreateShipmentApiModel(object):
+class BillbeeInterfacesBillbeeAPIModelCreateShipmentApiModel:
 
     """Implementation of the 'Billbee.Interfaces.BillbeeAPI.Model.CreateShipmentApiModel' model.
 

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 billbeeapi
 
@@ -10,7 +8,7 @@ from billbeeapi.models.billbee_interfaces_billbee_api_model_customer_address_api
 )
 
 
-class BillbeeInterfacesBillbeeAPIModelCreateCustomerApiModel(object):
+class BillbeeInterfacesBillbeeAPIModelCreateCustomerApiModel:
 
     """Implementation of the 'Billbee.Interfaces.BillbeeAPI.Model.CreateCustomerApiModel' model.
 

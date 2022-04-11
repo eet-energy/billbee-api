@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 billbeeapi
 
@@ -13,7 +11,7 @@ from billbeeapi.models.billbee_interfaces_billbee_api_model_sold_product import 
 )
 
 
-class BillbeeInterfacesBillbeeAPIModelOrderItem(object):
+class BillbeeInterfacesBillbeeAPIModelOrderItem:
 
     """Implementation of the 'Billbee.Interfaces.BillbeeAPI.Model.OrderItem' model.
 

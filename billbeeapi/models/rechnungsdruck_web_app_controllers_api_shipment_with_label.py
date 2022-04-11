@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 billbeeapi
 
@@ -11,7 +9,7 @@ from billbeeapi.models.billbee_interfaces_shipping_shipment_data_dimensions impo
 )
 
 
-class RechnungsdruckWebAppControllersApiShipmentWithLabel(object):
+class RechnungsdruckWebAppControllersApiShipmentWithLabel:
 
     """Implementation of the 'Rechnungsdruck.WebApp.Controllers.Api.ShipmentWithLabel' model.
 

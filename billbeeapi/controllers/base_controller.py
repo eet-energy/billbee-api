@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 billbeeapi
 
@@ -10,7 +8,7 @@ from billbeeapi.api_helper import APIHelper
 from billbeeapi.exceptions.api_exception import APIException
 
 
-class BaseController(object):
+class BaseController:
 
     """All controllers inherit from this base class.
 
@@ -50,7 +48,7 @@ class BaseController(object):
         """
         for name, value in kwargs.items():
             if value is None:
-                raise ValueError("Required parameter {} cannot be None.".format(name))
+                raise ValueError(f"Required parameter {name} cannot be None.")
 
     def execute_request(self, request, binary=False):
         """Executes an HttpRequest.

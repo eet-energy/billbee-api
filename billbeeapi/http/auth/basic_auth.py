@@ -10,10 +10,9 @@ import base64
 
 
 class BasicAuth:
-
     @staticmethod
     def apply(config, http_request):
-        """ Add basic authentication to the request.
+        """Add basic authentication to the request.
 
         Args:
             config (Configuration): The Configuration object which holds the
@@ -25,7 +24,7 @@ class BasicAuth:
         username = config.basic_auth_user_name
         password = config.basic_auth_password
         joined = "{}:{}".format(username, password)
-        encoded = base64.b64encode(str.encode(joined)).decode('iso-8859-1')
+        encoded = base64.b64encode(str.encode(joined)).decode("iso-8859-1")
         header_value = "Basic {}".format(encoded)
         http_request.headers["Authorization"] = header_value
-        http_request.headers['X-Billbee-Api-Key'] = config.api_key
+        http_request.headers["X-Billbee-Api-Key"] = config.api_key

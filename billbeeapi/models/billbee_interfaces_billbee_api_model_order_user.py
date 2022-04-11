@@ -31,27 +31,29 @@ class BillbeeInterfacesBillbeeAPIModelOrderUser(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "platform": 'Platform',
-        "billbee_shop_name": 'BillbeeShopName',
-        "billbee_shop_id": 'BillbeeShopId',
-        "id": 'Id',
-        "nick": 'Nick',
-        "first_name": 'FirstName',
-        "last_name": 'LastName',
-        "full_name": 'FullName',
-        "email": 'Email'
+        "platform": "Platform",
+        "billbee_shop_name": "BillbeeShopName",
+        "billbee_shop_id": "BillbeeShopId",
+        "id": "Id",
+        "nick": "Nick",
+        "first_name": "FirstName",
+        "last_name": "LastName",
+        "full_name": "FullName",
+        "email": "Email",
     }
 
-    def __init__(self,
-                 platform=None,
-                 billbee_shop_name=None,
-                 billbee_shop_id=None,
-                 id=None,
-                 nick=None,
-                 first_name=None,
-                 last_name=None,
-                 full_name=None,
-                 email=None):
+    def __init__(
+        self,
+        platform=None,
+        billbee_shop_name=None,
+        billbee_shop_id=None,
+        id=None,
+        nick=None,
+        first_name=None,
+        last_name=None,
+        full_name=None,
+        email=None,
+    ):
         """Constructor for the BillbeeInterfacesBillbeeAPIModelOrderUser class"""
 
         # Initialize members of the class
@@ -66,8 +68,7 @@ class BillbeeInterfacesBillbeeAPIModelOrderUser(object):
         self.email = email
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -83,23 +84,15 @@ class BillbeeInterfacesBillbeeAPIModelOrderUser(object):
             return None
 
         # Extract variables from the dictionary
-        platform = dictionary.get('Platform')
-        billbee_shop_name = dictionary.get('BillbeeShopName')
-        billbee_shop_id = dictionary.get('BillbeeShopId')
-        id = dictionary.get('Id')
-        nick = dictionary.get('Nick')
-        first_name = dictionary.get('FirstName')
-        last_name = dictionary.get('LastName')
-        full_name = dictionary.get('FullName')
-        email = dictionary.get('Email')
+        platform = dictionary.get("Platform")
+        billbee_shop_name = dictionary.get("BillbeeShopName")
+        billbee_shop_id = dictionary.get("BillbeeShopId")
+        id = dictionary.get("Id")
+        nick = dictionary.get("Nick")
+        first_name = dictionary.get("FirstName")
+        last_name = dictionary.get("LastName")
+        full_name = dictionary.get("FullName")
+        email = dictionary.get("Email")
 
         # Return an object of this model
-        return cls(platform,
-                   billbee_shop_name,
-                   billbee_shop_id,
-                   id,
-                   nick,
-                   first_name,
-                   last_name,
-                   full_name,
-                   email)
+        return cls(platform, billbee_shop_name, billbee_shop_id, id, nick, first_name, last_name, full_name, email)

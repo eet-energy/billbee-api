@@ -34,39 +34,41 @@ class BillbeeInterfacesBillbeeAPIModelOrderAddressApiModel(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "billbee_id": 'BillbeeId',
-        "first_name": 'FirstName',
-        "last_name": 'LastName',
-        "company": 'Company',
-        "name_addition": 'NameAddition',
-        "street": 'Street',
-        "house_number": 'HouseNumber',
-        "zip": 'Zip',
-        "city": 'City',
-        "country_iso_2": 'CountryISO2',
-        "country": 'Country',
-        "line_2": 'Line2',
-        "email": 'Email',
-        "state": 'State',
-        "phone": 'Phone'
+        "billbee_id": "BillbeeId",
+        "first_name": "FirstName",
+        "last_name": "LastName",
+        "company": "Company",
+        "name_addition": "NameAddition",
+        "street": "Street",
+        "house_number": "HouseNumber",
+        "zip": "Zip",
+        "city": "City",
+        "country_iso_2": "CountryISO2",
+        "country": "Country",
+        "line_2": "Line2",
+        "email": "Email",
+        "state": "State",
+        "phone": "Phone",
     }
 
-    def __init__(self,
-                 billbee_id=None,
-                 first_name=None,
-                 last_name=None,
-                 company=None,
-                 name_addition=None,
-                 street=None,
-                 house_number=None,
-                 zip=None,
-                 city=None,
-                 country_iso_2=None,
-                 country=None,
-                 line_2=None,
-                 email=None,
-                 state=None,
-                 phone=None):
+    def __init__(
+        self,
+        billbee_id=None,
+        first_name=None,
+        last_name=None,
+        company=None,
+        name_addition=None,
+        street=None,
+        house_number=None,
+        zip=None,
+        city=None,
+        country_iso_2=None,
+        country=None,
+        line_2=None,
+        email=None,
+        state=None,
+        phone=None,
+    ):
         """Constructor for the BillbeeInterfacesBillbeeAPIModelOrderAddressApiModel class"""
 
         # Initialize members of the class
@@ -87,8 +89,7 @@ class BillbeeInterfacesBillbeeAPIModelOrderAddressApiModel(object):
         self.phone = phone
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -104,35 +105,37 @@ class BillbeeInterfacesBillbeeAPIModelOrderAddressApiModel(object):
             return None
 
         # Extract variables from the dictionary
-        billbee_id = dictionary.get('BillbeeId')
-        first_name = dictionary.get('FirstName')
-        last_name = dictionary.get('LastName')
-        company = dictionary.get('Company')
-        name_addition = dictionary.get('NameAddition')
-        street = dictionary.get('Street')
-        house_number = dictionary.get('HouseNumber')
-        zip = dictionary.get('Zip')
-        city = dictionary.get('City')
-        country_iso_2 = dictionary.get('CountryISO2')
-        country = dictionary.get('Country')
-        line_2 = dictionary.get('Line2')
-        email = dictionary.get('Email')
-        state = dictionary.get('State')
-        phone = dictionary.get('Phone')
+        billbee_id = dictionary.get("BillbeeId")
+        first_name = dictionary.get("FirstName")
+        last_name = dictionary.get("LastName")
+        company = dictionary.get("Company")
+        name_addition = dictionary.get("NameAddition")
+        street = dictionary.get("Street")
+        house_number = dictionary.get("HouseNumber")
+        zip = dictionary.get("Zip")
+        city = dictionary.get("City")
+        country_iso_2 = dictionary.get("CountryISO2")
+        country = dictionary.get("Country")
+        line_2 = dictionary.get("Line2")
+        email = dictionary.get("Email")
+        state = dictionary.get("State")
+        phone = dictionary.get("Phone")
 
         # Return an object of this model
-        return cls(billbee_id,
-                   first_name,
-                   last_name,
-                   company,
-                   name_addition,
-                   street,
-                   house_number,
-                   zip,
-                   city,
-                   country_iso_2,
-                   country,
-                   line_2,
-                   email,
-                   state,
-                   phone)
+        return cls(
+            billbee_id,
+            first_name,
+            last_name,
+            company,
+            name_addition,
+            street,
+            house_number,
+            zip,
+            city,
+            country_iso_2,
+            country,
+            line_2,
+            email,
+            state,
+            phone,
+        )

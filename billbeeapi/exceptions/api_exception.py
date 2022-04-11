@@ -17,9 +17,7 @@ class APIException(Exception):
 
     """
 
-    def __init__(self,
-                 reason,
-                 response):
+    def __init__(self, reason, response):
         """Constructor for the APIException class
 
         Args:

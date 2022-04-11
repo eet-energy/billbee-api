@@ -19,20 +19,16 @@ class RechnungsdruckWebAppControllersApiOrderTagCreate(object):
     """
 
     # Create a mapping from Model property names to API property names
-    _names = {
-        "tags": 'Tags'
-    }
+    _names = {"tags": "Tags"}
 
-    def __init__(self,
-                 tags=None):
+    def __init__(self, tags=None):
         """Constructor for the RechnungsdruckWebAppControllersApiOrderTagCreate class"""
 
         # Initialize members of the class
         self.tags = tags
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -48,7 +44,7 @@ class RechnungsdruckWebAppControllersApiOrderTagCreate(object):
             return None
 
         # Extract variables from the dictionary
-        tags = dictionary.get('Tags')
+        tags = dictionary.get("Tags")
 
         # Return an object of this model
         return cls(tags)

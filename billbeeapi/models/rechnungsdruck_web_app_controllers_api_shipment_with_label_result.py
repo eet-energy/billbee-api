@@ -28,25 +28,27 @@ class RechnungsdruckWebAppControllersApiShipmentWithLabelResult(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "order_id": 'OrderId',
-        "order_reference": 'OrderReference',
-        "shipping_id": 'ShippingId',
-        "tracking_url": 'TrackingUrl',
-        "label_data_pdf": 'LabelDataPdf',
-        "export_docs_pdf": 'ExportDocsPdf',
-        "carrier": 'Carrier',
-        "shipping_date": 'ShippingDate'
+        "order_id": "OrderId",
+        "order_reference": "OrderReference",
+        "shipping_id": "ShippingId",
+        "tracking_url": "TrackingUrl",
+        "label_data_pdf": "LabelDataPdf",
+        "export_docs_pdf": "ExportDocsPdf",
+        "carrier": "Carrier",
+        "shipping_date": "ShippingDate",
     }
 
-    def __init__(self,
-                 order_id=None,
-                 order_reference=None,
-                 shipping_id=None,
-                 tracking_url=None,
-                 label_data_pdf=None,
-                 export_docs_pdf=None,
-                 carrier=None,
-                 shipping_date=None):
+    def __init__(
+        self,
+        order_id=None,
+        order_reference=None,
+        shipping_id=None,
+        tracking_url=None,
+        label_data_pdf=None,
+        export_docs_pdf=None,
+        carrier=None,
+        shipping_date=None,
+    ):
         """Constructor for the RechnungsdruckWebAppControllersApiShipmentWithLabelResult class"""
 
         # Initialize members of the class
@@ -60,8 +62,7 @@ class RechnungsdruckWebAppControllersApiShipmentWithLabelResult(object):
         self.shipping_date = APIHelper.RFC3339DateTime(shipping_date) if shipping_date else None
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -77,21 +78,27 @@ class RechnungsdruckWebAppControllersApiShipmentWithLabelResult(object):
             return None
 
         # Extract variables from the dictionary
-        order_id = dictionary.get('OrderId')
-        order_reference = dictionary.get('OrderReference')
-        shipping_id = dictionary.get('ShippingId')
-        tracking_url = dictionary.get('TrackingUrl')
-        label_data_pdf = dictionary.get('LabelDataPdf')
-        export_docs_pdf = dictionary.get('ExportDocsPdf')
-        carrier = dictionary.get('Carrier')
-        shipping_date = APIHelper.RFC3339DateTime.from_value(dictionary.get("ShippingDate")).datetime if dictionary.get("ShippingDate") else None
+        order_id = dictionary.get("OrderId")
+        order_reference = dictionary.get("OrderReference")
+        shipping_id = dictionary.get("ShippingId")
+        tracking_url = dictionary.get("TrackingUrl")
+        label_data_pdf = dictionary.get("LabelDataPdf")
+        export_docs_pdf = dictionary.get("ExportDocsPdf")
+        carrier = dictionary.get("Carrier")
+        shipping_date = (
+            APIHelper.RFC3339DateTime.from_value(dictionary.get("ShippingDate")).datetime
+            if dictionary.get("ShippingDate")
+            else None
+        )
 
         # Return an object of this model
-        return cls(order_id,
-                   order_reference,
-                   shipping_id,
-                   tracking_url,
-                   label_data_pdf,
-                   export_docs_pdf,
-                   carrier,
-                   shipping_date)
+        return cls(
+            order_id,
+            order_reference,
+            shipping_id,
+            tracking_url,
+            label_data_pdf,
+            export_docs_pdf,
+            carrier,
+            shipping_date,
+        )

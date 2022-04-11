@@ -29,25 +29,27 @@ class BillbeeInterfacesBillbeeAPIModelShipment(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "billbee_id": 'BillbeeId',
-        "shipping_id": 'ShippingId',
-        "shipper": 'Shipper',
-        "created": 'Created',
-        "tracking_url": 'TrackingUrl',
-        "shipping_provider_id": 'ShippingProviderId',
-        "shipping_provider_product_id": 'ShippingProviderProductId',
-        "shipping_carrier": 'ShippingCarrier'
+        "billbee_id": "BillbeeId",
+        "shipping_id": "ShippingId",
+        "shipper": "Shipper",
+        "created": "Created",
+        "tracking_url": "TrackingUrl",
+        "shipping_provider_id": "ShippingProviderId",
+        "shipping_provider_product_id": "ShippingProviderProductId",
+        "shipping_carrier": "ShippingCarrier",
     }
 
-    def __init__(self,
-                 billbee_id=None,
-                 shipping_id=None,
-                 shipper=None,
-                 created=None,
-                 tracking_url=None,
-                 shipping_provider_id=None,
-                 shipping_provider_product_id=None,
-                 shipping_carrier=None):
+    def __init__(
+        self,
+        billbee_id=None,
+        shipping_id=None,
+        shipper=None,
+        created=None,
+        tracking_url=None,
+        shipping_provider_id=None,
+        shipping_provider_product_id=None,
+        shipping_carrier=None,
+    ):
         """Constructor for the BillbeeInterfacesBillbeeAPIModelShipment class"""
 
         # Initialize members of the class
@@ -61,8 +63,7 @@ class BillbeeInterfacesBillbeeAPIModelShipment(object):
         self.shipping_carrier = shipping_carrier
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -78,21 +79,27 @@ class BillbeeInterfacesBillbeeAPIModelShipment(object):
             return None
 
         # Extract variables from the dictionary
-        billbee_id = dictionary.get('BillbeeId')
-        shipping_id = dictionary.get('ShippingId')
-        shipper = dictionary.get('Shipper')
-        created = APIHelper.RFC3339DateTime.from_value(dictionary.get("Created")).datetime if dictionary.get("Created") else None
-        tracking_url = dictionary.get('TrackingUrl')
-        shipping_provider_id = dictionary.get('ShippingProviderId')
-        shipping_provider_product_id = dictionary.get('ShippingProviderProductId')
-        shipping_carrier = dictionary.get('ShippingCarrier')
+        billbee_id = dictionary.get("BillbeeId")
+        shipping_id = dictionary.get("ShippingId")
+        shipper = dictionary.get("Shipper")
+        created = (
+            APIHelper.RFC3339DateTime.from_value(dictionary.get("Created")).datetime
+            if dictionary.get("Created")
+            else None
+        )
+        tracking_url = dictionary.get("TrackingUrl")
+        shipping_provider_id = dictionary.get("ShippingProviderId")
+        shipping_provider_product_id = dictionary.get("ShippingProviderProductId")
+        shipping_carrier = dictionary.get("ShippingCarrier")
 
         # Return an object of this model
-        return cls(billbee_id,
-                   shipping_id,
-                   shipper,
-                   created,
-                   tracking_url,
-                   shipping_provider_id,
-                   shipping_provider_product_id,
-                   shipping_carrier)
+        return cls(
+            billbee_id,
+            shipping_id,
+            shipper,
+            created,
+            tracking_url,
+            shipping_provider_id,
+            shipping_provider_product_id,
+            shipping_carrier,
+        )

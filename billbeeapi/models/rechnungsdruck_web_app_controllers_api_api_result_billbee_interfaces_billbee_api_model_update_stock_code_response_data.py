@@ -21,16 +21,9 @@ class RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIMode
     """
 
     # Create a mapping from Model property names to API property names
-    _names = {
-        "error_message": 'ErrorMessage',
-        "error_code": 'ErrorCode',
-        "data": 'Data'
-    }
+    _names = {"error_message": "ErrorMessage", "error_code": "ErrorCode", "data": "Data"}
 
-    def __init__(self,
-                 error_message=None,
-                 error_code=None,
-                 data=None):
+    def __init__(self, error_message=None, error_code=None, data=None):
         """Constructor for the RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelUpdateStockCodeResponseData class"""
 
         # Initialize members of the class
@@ -39,8 +32,7 @@ class RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIMode
         self.data = data
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -56,11 +48,9 @@ class RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIMode
             return None
 
         # Extract variables from the dictionary
-        error_message = dictionary.get('ErrorMessage')
-        error_code = dictionary.get('ErrorCode')
-        data = dictionary.get('Data')
+        error_message = dictionary.get("ErrorMessage")
+        error_code = dictionary.get("ErrorCode")
+        data = dictionary.get("Data")
 
         # Return an object of this model
-        return cls(error_message,
-                   error_code,
-                   data)
+        return cls(error_message, error_code, data)

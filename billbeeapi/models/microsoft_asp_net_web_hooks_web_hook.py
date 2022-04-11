@@ -27,25 +27,27 @@ class MicrosoftAspNetWebHooksWebHook(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "web_hook_uri": 'WebHookUri',
-        "id": 'Id',
-        "secret": 'Secret',
-        "description": 'Description',
-        "is_paused": 'IsPaused',
-        "filters": 'Filters',
-        "headers": 'Headers',
-        "properties": 'Properties'
+        "web_hook_uri": "WebHookUri",
+        "id": "Id",
+        "secret": "Secret",
+        "description": "Description",
+        "is_paused": "IsPaused",
+        "filters": "Filters",
+        "headers": "Headers",
+        "properties": "Properties",
     }
 
-    def __init__(self,
-                 web_hook_uri=None,
-                 id=None,
-                 secret=None,
-                 description=None,
-                 is_paused=None,
-                 filters=None,
-                 headers=None,
-                 properties=None):
+    def __init__(
+        self,
+        web_hook_uri=None,
+        id=None,
+        secret=None,
+        description=None,
+        is_paused=None,
+        filters=None,
+        headers=None,
+        properties=None,
+    ):
         """Constructor for the MicrosoftAspNetWebHooksWebHook class"""
 
         # Initialize members of the class
@@ -59,8 +61,7 @@ class MicrosoftAspNetWebHooksWebHook(object):
         self.properties = properties
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -76,21 +77,14 @@ class MicrosoftAspNetWebHooksWebHook(object):
             return None
 
         # Extract variables from the dictionary
-        web_hook_uri = dictionary.get('WebHookUri')
-        id = dictionary.get('Id')
-        secret = dictionary.get('Secret')
-        description = dictionary.get('Description')
-        is_paused = dictionary.get('IsPaused')
-        filters = dictionary.get('Filters')
-        headers = dictionary.get('Headers')
-        properties = dictionary.get('Properties')
+        web_hook_uri = dictionary.get("WebHookUri")
+        id = dictionary.get("Id")
+        secret = dictionary.get("Secret")
+        description = dictionary.get("Description")
+        is_paused = dictionary.get("IsPaused")
+        filters = dictionary.get("Filters")
+        headers = dictionary.get("Headers")
+        properties = dictionary.get("Properties")
 
         # Return an object of this model
-        return cls(web_hook_uri,
-                   id,
-                   secret,
-                   description,
-                   is_paused,
-                   filters,
-                   headers,
-                   properties)
+        return cls(web_hook_uri, id, secret, description, is_paused, filters, headers, properties)

@@ -10,7 +10,9 @@ from billbeeapi.api_helper import APIHelper
 from billbeeapi.configuration import Server
 from billbeeapi.controllers.base_controller import BaseController
 from billbeeapi.http.auth.basic_auth import BasicAuth
-from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_result_system_collections_generic_list_billbee_interfaces_billbee_api_model_cloud_storage_api_model import RechnungsdruckWebAppControllersApiApiResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelCloudStorageApiModel
+from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_result_system_collections_generic_list_billbee_interfaces_billbee_api_model_cloud_storage_api_model import (
+    RechnungsdruckWebAppControllersApiApiResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelCloudStorageApiModel,
+)
 
 
 class CloudStorageController(BaseController):
@@ -39,15 +41,13 @@ class CloudStorageController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/cloudstorages'
+        _url_path = "/api/v1/cloudstorages"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json'
-        }
+        _headers = {"accept": "application/json"}
 
         # Prepare and execute request
         _request = self.config.http_client.get(_query_url, headers=_headers)
@@ -55,6 +55,9 @@ class CloudStorageController(BaseController):
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelCloudStorageApiModel.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelCloudStorageApiModel.from_dictionary,
+        )
 
         return decoded

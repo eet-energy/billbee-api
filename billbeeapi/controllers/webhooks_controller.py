@@ -37,15 +37,13 @@ class WebhooksController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/webhooks'
+        _url_path = "/api/v1/webhooks"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json'
-        }
+        _headers = {"accept": "application/json"}
 
         # Prepare and execute request
         _request = self.config.http_client.get(_query_url, headers=_headers)
@@ -57,8 +55,7 @@ class WebhooksController(BaseController):
 
         return decoded
 
-    def web_hook_management_post(self,
-                                 web_hook):
+    def web_hook_management_post(self, web_hook):
         """Does a POST request to /api/v1/webhooks.
 
         Registers a new WebHook for a given user.
@@ -79,19 +76,18 @@ class WebhooksController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/webhooks'
+        _url_path = "/api/v1/webhooks"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json',
-            'content-type': 'application/json; charset=utf-8'
-        }
+        _headers = {"accept": "application/json", "content-type": "application/json; charset=utf-8"}
 
         # Prepare and execute request
-        _request = self.config.http_client.post(_query_url, headers=_headers, parameters=APIHelper.json_serialize(web_hook))
+        _request = self.config.http_client.post(
+            _query_url, headers=_headers, parameters=APIHelper.json_serialize(web_hook)
+        )
         BasicAuth.apply(self.config, _request)
         _response = self.execute_request(_request)
         self.validate_response(_response)
@@ -117,7 +113,7 @@ class WebhooksController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/webhooks'
+        _url_path = "/api/v1/webhooks"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
@@ -132,8 +128,7 @@ class WebhooksController(BaseController):
 
         return decoded
 
-    def web_hook_management_lookup(self,
-                                   id):
+    def web_hook_management_lookup(self, id):
         """Does a GET request to /api/v1/webhooks/{id}.
 
         Looks up a registered WebHook with the given {id} for a given user.
@@ -153,18 +148,14 @@ class WebhooksController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/webhooks/{id}'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'id': {'value': id, 'encode': True}
-        })
+        _url_path = "/api/v1/webhooks/{id}"
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {"id": {"value": id, "encode": True}})
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json'
-        }
+        _headers = {"accept": "application/json"}
 
         # Prepare and execute request
         _request = self.config.http_client.get(_query_url, headers=_headers)
@@ -176,9 +167,7 @@ class WebhooksController(BaseController):
 
         return decoded
 
-    def web_hook_management_put(self,
-                                id,
-                                web_hook):
+    def web_hook_management_put(self, id, web_hook):
         """Does a PUT request to /api/v1/webhooks/{id}.
 
         Updates an existing WebHook registration.
@@ -200,21 +189,19 @@ class WebhooksController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/webhooks/{id}'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'id': {'value': id, 'encode': True}
-        })
+        _url_path = "/api/v1/webhooks/{id}"
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {"id": {"value": id, "encode": True}})
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'content-type': 'application/json; charset=utf-8'
-        }
+        _headers = {"content-type": "application/json; charset=utf-8"}
 
         # Prepare and execute request
-        _request = self.config.http_client.put(_query_url, headers=_headers, parameters=APIHelper.json_serialize(web_hook))
+        _request = self.config.http_client.put(
+            _query_url, headers=_headers, parameters=APIHelper.json_serialize(web_hook)
+        )
         BasicAuth.apply(self.config, _request)
         _response = self.execute_request(_request)
         self.validate_response(_response)
@@ -223,8 +210,7 @@ class WebhooksController(BaseController):
 
         return decoded
 
-    def web_hook_management_delete(self,
-                                   id):
+    def web_hook_management_delete(self, id):
         """Does a DELETE request to /api/v1/webhooks/{id}.
 
         Deletes an existing WebHook registration.
@@ -244,10 +230,8 @@ class WebhooksController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/webhooks/{id}'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'id': {'value': id, 'encode': True}
-        })
+        _url_path = "/api/v1/webhooks/{id}"
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {"id": {"value": id, "encode": True}})
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
@@ -279,7 +263,7 @@ class WebhooksController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/webhooks/filters'
+        _url_path = "/api/v1/webhooks/filters"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)

@@ -23,18 +23,9 @@ class BillbeeInterfacesBillbeeAPIModelProductImage(object):
     """
 
     # Create a mapping from Model property names to API property names
-    _names = {
-        "url": 'Url',
-        "is_default_image": 'IsDefaultImage',
-        "position": 'Position',
-        "external_id": 'ExternalId'
-    }
+    _names = {"url": "Url", "is_default_image": "IsDefaultImage", "position": "Position", "external_id": "ExternalId"}
 
-    def __init__(self,
-                 url=None,
-                 is_default_image=None,
-                 position=None,
-                 external_id=None):
+    def __init__(self, url=None, is_default_image=None, position=None, external_id=None):
         """Constructor for the BillbeeInterfacesBillbeeAPIModelProductImage class"""
 
         # Initialize members of the class
@@ -44,8 +35,7 @@ class BillbeeInterfacesBillbeeAPIModelProductImage(object):
         self.external_id = external_id
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -61,13 +51,10 @@ class BillbeeInterfacesBillbeeAPIModelProductImage(object):
             return None
 
         # Extract variables from the dictionary
-        url = dictionary.get('Url')
-        is_default_image = dictionary.get('IsDefaultImage')
-        position = dictionary.get('Position')
-        external_id = dictionary.get('ExternalId')
+        url = dictionary.get("Url")
+        is_default_image = dictionary.get("IsDefaultImage")
+        position = dictionary.get("Position")
+        external_id = dictionary.get("ExternalId")
 
         # Return an object of this model
-        return cls(url,
-                   is_default_image,
-                   position,
-                   external_id)
+        return cls(url, is_default_image, position, external_id)

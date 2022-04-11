@@ -25,18 +25,9 @@ class RechnungsdruckWebAppControllersApiOrderApiControllerParseTextContainer(obj
     """
 
     # Create a mapping from Model property names to API property names
-    _names = {
-        "text_to_parse": 'TextToParse',
-        "is_html": 'IsHtml',
-        "language": 'Language',
-        "trim": 'Trim'
-    }
+    _names = {"text_to_parse": "TextToParse", "is_html": "IsHtml", "language": "Language", "trim": "Trim"}
 
-    def __init__(self,
-                 text_to_parse=None,
-                 is_html=None,
-                 language=None,
-                 trim=None):
+    def __init__(self, text_to_parse=None, is_html=None, language=None, trim=None):
         """Constructor for the RechnungsdruckWebAppControllersApiOrderApiControllerParseTextContainer class"""
 
         # Initialize members of the class
@@ -46,8 +37,7 @@ class RechnungsdruckWebAppControllersApiOrderApiControllerParseTextContainer(obj
         self.trim = trim
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -63,13 +53,10 @@ class RechnungsdruckWebAppControllersApiOrderApiControllerParseTextContainer(obj
             return None
 
         # Extract variables from the dictionary
-        text_to_parse = dictionary.get('TextToParse')
-        is_html = dictionary.get('IsHtml')
-        language = dictionary.get('Language')
-        trim = dictionary.get('Trim')
+        text_to_parse = dictionary.get("TextToParse")
+        is_html = dictionary.get("IsHtml")
+        language = dictionary.get("Language")
+        trim = dictionary.get("Trim")
 
         # Return an object of this model
-        return cls(text_to_parse,
-                   is_html,
-                   language,
-                   trim)
+        return cls(text_to_parse, is_html, language, trim)

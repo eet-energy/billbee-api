@@ -33,21 +33,23 @@ class RechnungsdruckWebAppControllersApiApiAddShipmentToOrderModel(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "shipping_id": 'ShippingId',
-        "order_id": 'OrderId',
-        "comment": 'Comment',
-        "shipping_provider_id": 'ShippingProviderId',
-        "shipping_provider_product_id": 'ShippingProviderProductId',
-        "carrier_id": 'CarrierId'
+        "shipping_id": "ShippingId",
+        "order_id": "OrderId",
+        "comment": "Comment",
+        "shipping_provider_id": "ShippingProviderId",
+        "shipping_provider_product_id": "ShippingProviderProductId",
+        "carrier_id": "CarrierId",
     }
 
-    def __init__(self,
-                 shipping_id=None,
-                 order_id=None,
-                 comment=None,
-                 shipping_provider_id=None,
-                 shipping_provider_product_id=None,
-                 carrier_id=None):
+    def __init__(
+        self,
+        shipping_id=None,
+        order_id=None,
+        comment=None,
+        shipping_provider_id=None,
+        shipping_provider_product_id=None,
+        carrier_id=None,
+    ):
         """Constructor for the RechnungsdruckWebAppControllersApiApiAddShipmentToOrderModel class"""
 
         # Initialize members of the class
@@ -59,8 +61,7 @@ class RechnungsdruckWebAppControllersApiApiAddShipmentToOrderModel(object):
         self.carrier_id = carrier_id
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -76,17 +77,12 @@ class RechnungsdruckWebAppControllersApiApiAddShipmentToOrderModel(object):
             return None
 
         # Extract variables from the dictionary
-        shipping_id = dictionary.get('ShippingId')
-        order_id = dictionary.get('OrderId')
-        comment = dictionary.get('Comment')
-        shipping_provider_id = dictionary.get('ShippingProviderId')
-        shipping_provider_product_id = dictionary.get('ShippingProviderProductId')
-        carrier_id = dictionary.get('CarrierId')
+        shipping_id = dictionary.get("ShippingId")
+        order_id = dictionary.get("OrderId")
+        comment = dictionary.get("Comment")
+        shipping_provider_id = dictionary.get("ShippingProviderId")
+        shipping_provider_product_id = dictionary.get("ShippingProviderProductId")
+        carrier_id = dictionary.get("CarrierId")
 
         # Return an object of this model
-        return cls(shipping_id,
-                   order_id,
-                   comment,
-                   shipping_provider_id,
-                   shipping_provider_product_id,
-                   carrier_id)
+        return cls(shipping_id, order_id, comment, shipping_provider_id, shipping_provider_product_id, carrier_id)

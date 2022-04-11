@@ -30,31 +30,33 @@ class BillbeeInterfacesBillbeeAPIModelArticleSourceApiModel(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "source": 'Source',
-        "source_id": 'SourceId',
-        "id": 'Id',
-        "api_account_name": 'ApiAccountName',
-        "api_account_id": 'ApiAccountId',
-        "export_factor": 'ExportFactor',
-        "stock_sync_inactive": 'StockSyncInactive',
-        "stock_sync_min": 'StockSyncMin',
-        "stock_sync_max": 'StockSyncMax',
-        "units_per_item": 'UnitsPerItem',
-        "custom": 'Custom'
+        "source": "Source",
+        "source_id": "SourceId",
+        "id": "Id",
+        "api_account_name": "ApiAccountName",
+        "api_account_id": "ApiAccountId",
+        "export_factor": "ExportFactor",
+        "stock_sync_inactive": "StockSyncInactive",
+        "stock_sync_min": "StockSyncMin",
+        "stock_sync_max": "StockSyncMax",
+        "units_per_item": "UnitsPerItem",
+        "custom": "Custom",
     }
 
-    def __init__(self,
-                 source=None,
-                 source_id=None,
-                 id=None,
-                 api_account_name=None,
-                 api_account_id=None,
-                 export_factor=None,
-                 stock_sync_inactive=None,
-                 stock_sync_min=None,
-                 stock_sync_max=None,
-                 units_per_item=None,
-                 custom=None):
+    def __init__(
+        self,
+        source=None,
+        source_id=None,
+        id=None,
+        api_account_name=None,
+        api_account_id=None,
+        export_factor=None,
+        stock_sync_inactive=None,
+        stock_sync_min=None,
+        stock_sync_max=None,
+        units_per_item=None,
+        custom=None,
+    ):
         """Constructor for the BillbeeInterfacesBillbeeAPIModelArticleSourceApiModel class"""
 
         # Initialize members of the class
@@ -71,8 +73,7 @@ class BillbeeInterfacesBillbeeAPIModelArticleSourceApiModel(object):
         self.custom = custom
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -88,27 +89,29 @@ class BillbeeInterfacesBillbeeAPIModelArticleSourceApiModel(object):
             return None
 
         # Extract variables from the dictionary
-        source = dictionary.get('Source')
-        source_id = dictionary.get('SourceId')
-        id = dictionary.get('Id')
-        api_account_name = dictionary.get('ApiAccountName')
-        api_account_id = dictionary.get('ApiAccountId')
-        export_factor = dictionary.get('ExportFactor')
-        stock_sync_inactive = dictionary.get('StockSyncInactive')
-        stock_sync_min = dictionary.get('StockSyncMin')
-        stock_sync_max = dictionary.get('StockSyncMax')
-        units_per_item = dictionary.get('UnitsPerItem')
-        custom = dictionary.get('Custom')
+        source = dictionary.get("Source")
+        source_id = dictionary.get("SourceId")
+        id = dictionary.get("Id")
+        api_account_name = dictionary.get("ApiAccountName")
+        api_account_id = dictionary.get("ApiAccountId")
+        export_factor = dictionary.get("ExportFactor")
+        stock_sync_inactive = dictionary.get("StockSyncInactive")
+        stock_sync_min = dictionary.get("StockSyncMin")
+        stock_sync_max = dictionary.get("StockSyncMax")
+        units_per_item = dictionary.get("UnitsPerItem")
+        custom = dictionary.get("Custom")
 
         # Return an object of this model
-        return cls(source,
-                   source_id,
-                   id,
-                   api_account_name,
-                   api_account_id,
-                   export_factor,
-                   stock_sync_inactive,
-                   stock_sync_min,
-                   stock_sync_max,
-                   units_per_item,
-                   custom)
+        return cls(
+            source,
+            source_id,
+            id,
+            api_account_name,
+            api_account_id,
+            export_factor,
+            stock_sync_inactive,
+            stock_sync_min,
+            stock_sync_max,
+            units_per_item,
+            custom,
+        )

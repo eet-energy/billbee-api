@@ -21,16 +21,9 @@ class BillbeeInterfacesBillbeeAPIModelsLayoutTemplate(object):
     """
 
     # Create a mapping from Model property names to API property names
-    _names = {
-        "id": 'Id',
-        "name": 'Name',
-        "mtype": 'Type'
-    }
+    _names = {"id": "Id", "name": "Name", "mtype": "Type"}
 
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 mtype=None):
+    def __init__(self, id=None, name=None, mtype=None):
         """Constructor for the BillbeeInterfacesBillbeeAPIModelsLayoutTemplate class"""
 
         # Initialize members of the class
@@ -39,8 +32,7 @@ class BillbeeInterfacesBillbeeAPIModelsLayoutTemplate(object):
         self.mtype = mtype
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -56,11 +48,9 @@ class BillbeeInterfacesBillbeeAPIModelsLayoutTemplate(object):
             return None
 
         # Extract variables from the dictionary
-        id = dictionary.get('Id')
-        name = dictionary.get('Name')
-        mtype = dictionary.get('Type')
+        id = dictionary.get("Id")
+        name = dictionary.get("Name")
+        mtype = dictionary.get("Type")
 
         # Return an object of this model
-        return cls(id,
-                   name,
-                   mtype)
+        return cls(id, name, mtype)

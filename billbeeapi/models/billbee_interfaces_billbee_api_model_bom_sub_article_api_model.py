@@ -21,16 +21,9 @@ class BillbeeInterfacesBillbeeAPIModelBomSubArticleApiModel(object):
     """
 
     # Create a mapping from Model property names to API property names
-    _names = {
-        "amount": 'Amount',
-        "article_id": 'ArticleId',
-        "sku": 'SKU'
-    }
+    _names = {"amount": "Amount", "article_id": "ArticleId", "sku": "SKU"}
 
-    def __init__(self,
-                 amount=None,
-                 article_id=None,
-                 sku=None):
+    def __init__(self, amount=None, article_id=None, sku=None):
         """Constructor for the BillbeeInterfacesBillbeeAPIModelBomSubArticleApiModel class"""
 
         # Initialize members of the class
@@ -39,8 +32,7 @@ class BillbeeInterfacesBillbeeAPIModelBomSubArticleApiModel(object):
         self.sku = sku
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -56,11 +48,9 @@ class BillbeeInterfacesBillbeeAPIModelBomSubArticleApiModel(object):
             return None
 
         # Extract variables from the dictionary
-        amount = dictionary.get('Amount')
-        article_id = dictionary.get('ArticleId')
-        sku = dictionary.get('SKU')
+        amount = dictionary.get("Amount")
+        article_id = dictionary.get("ArticleId")
+        sku = dictionary.get("SKU")
 
         # Return an object of this model
-        return cls(amount,
-                   article_id,
-                   sku)
+        return cls(amount, article_id, sku)

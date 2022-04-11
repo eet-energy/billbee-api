@@ -22,18 +22,9 @@ class RechnungsdruckWebAppControllersApiSearchControllerCustomerResult(object):
     """
 
     # Create a mapping from Model property names to API property names
-    _names = {
-        "id": 'Id',
-        "name": 'Name',
-        "addresses": 'Addresses',
-        "number": 'Number'
-    }
+    _names = {"id": "Id", "name": "Name", "addresses": "Addresses", "number": "Number"}
 
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 addresses=None,
-                 number=None):
+    def __init__(self, id=None, name=None, addresses=None, number=None):
         """Constructor for the RechnungsdruckWebAppControllersApiSearchControllerCustomerResult class"""
 
         # Initialize members of the class
@@ -43,8 +34,7 @@ class RechnungsdruckWebAppControllersApiSearchControllerCustomerResult(object):
         self.number = number
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -60,13 +50,10 @@ class RechnungsdruckWebAppControllersApiSearchControllerCustomerResult(object):
             return None
 
         # Extract variables from the dictionary
-        id = dictionary.get('Id')
-        name = dictionary.get('Name')
-        addresses = dictionary.get('Addresses')
-        number = dictionary.get('Number')
+        id = dictionary.get("Id")
+        name = dictionary.get("Name")
+        addresses = dictionary.get("Addresses")
+        number = dictionary.get("Number")
 
         # Return an object of this model
-        return cls(id,
-                   name,
-                   addresses,
-                   number)
+        return cls(id, name, addresses, number)

@@ -27,25 +27,19 @@ class RechnungsdruckWebAppControllersApiAutomaticProvisioningControllerCreateAcc
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "company": 'Company',
-        "name": 'Name',
-        "address_1": 'Address1',
-        "address_2": 'Address2',
-        "zip": 'Zip',
-        "city": 'City',
-        "country": 'Country',
-        "vat_id": 'VatId'
+        "company": "Company",
+        "name": "Name",
+        "address_1": "Address1",
+        "address_2": "Address2",
+        "zip": "Zip",
+        "city": "City",
+        "country": "Country",
+        "vat_id": "VatId",
     }
 
-    def __init__(self,
-                 company=None,
-                 name=None,
-                 address_1=None,
-                 address_2=None,
-                 zip=None,
-                 city=None,
-                 country=None,
-                 vat_id=None):
+    def __init__(
+        self, company=None, name=None, address_1=None, address_2=None, zip=None, city=None, country=None, vat_id=None
+    ):
         """Constructor for the RechnungsdruckWebAppControllersApiAutomaticProvisioningControllerCreateAccountContainerUserAddress class"""
 
         # Initialize members of the class
@@ -59,8 +53,7 @@ class RechnungsdruckWebAppControllersApiAutomaticProvisioningControllerCreateAcc
         self.vat_id = vat_id
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -76,21 +69,14 @@ class RechnungsdruckWebAppControllersApiAutomaticProvisioningControllerCreateAcc
             return None
 
         # Extract variables from the dictionary
-        company = dictionary.get('Company')
-        name = dictionary.get('Name')
-        address_1 = dictionary.get('Address1')
-        address_2 = dictionary.get('Address2')
-        zip = dictionary.get('Zip')
-        city = dictionary.get('City')
-        country = dictionary.get('Country')
-        vat_id = dictionary.get('VatId')
+        company = dictionary.get("Company")
+        name = dictionary.get("Name")
+        address_1 = dictionary.get("Address1")
+        address_2 = dictionary.get("Address2")
+        zip = dictionary.get("Zip")
+        city = dictionary.get("City")
+        country = dictionary.get("Country")
+        vat_id = dictionary.get("VatId")
 
         # Return an object of this model
-        return cls(company,
-                   name,
-                   address_1,
-                   address_2,
-                   zip,
-                   city,
-                   country,
-                   vat_id)
+        return cls(company, name, address_1, address_2, zip, city, country, vat_id)

@@ -29,29 +29,31 @@ class BillbeeInterfacesBillbeeAPIModelCustomerApiModel(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "id": 'Id',
-        "name": 'Name',
-        "email": 'Email',
-        "tel_1": 'Tel1',
-        "tel_2": 'Tel2',
-        "number": 'Number',
-        "price_group_id": 'PriceGroupId',
-        "language_id": 'LanguageId',
-        "vat_id": 'VatId',
-        "mtype": 'Type'
+        "id": "Id",
+        "name": "Name",
+        "email": "Email",
+        "tel_1": "Tel1",
+        "tel_2": "Tel2",
+        "number": "Number",
+        "price_group_id": "PriceGroupId",
+        "language_id": "LanguageId",
+        "vat_id": "VatId",
+        "mtype": "Type",
     }
 
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 email=None,
-                 tel_1=None,
-                 tel_2=None,
-                 number=None,
-                 price_group_id=None,
-                 language_id=None,
-                 vat_id=None,
-                 mtype=None):
+    def __init__(
+        self,
+        id=None,
+        name=None,
+        email=None,
+        tel_1=None,
+        tel_2=None,
+        number=None,
+        price_group_id=None,
+        language_id=None,
+        vat_id=None,
+        mtype=None,
+    ):
         """Constructor for the BillbeeInterfacesBillbeeAPIModelCustomerApiModel class"""
 
         # Initialize members of the class
@@ -67,8 +69,7 @@ class BillbeeInterfacesBillbeeAPIModelCustomerApiModel(object):
         self.mtype = mtype
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -84,25 +85,16 @@ class BillbeeInterfacesBillbeeAPIModelCustomerApiModel(object):
             return None
 
         # Extract variables from the dictionary
-        id = dictionary.get('Id')
-        name = dictionary.get('Name')
-        email = dictionary.get('Email')
-        tel_1 = dictionary.get('Tel1')
-        tel_2 = dictionary.get('Tel2')
-        number = dictionary.get('Number')
-        price_group_id = dictionary.get('PriceGroupId')
-        language_id = dictionary.get('LanguageId')
-        vat_id = dictionary.get('VatId')
-        mtype = dictionary.get('Type')
+        id = dictionary.get("Id")
+        name = dictionary.get("Name")
+        email = dictionary.get("Email")
+        tel_1 = dictionary.get("Tel1")
+        tel_2 = dictionary.get("Tel2")
+        number = dictionary.get("Number")
+        price_group_id = dictionary.get("PriceGroupId")
+        language_id = dictionary.get("LanguageId")
+        vat_id = dictionary.get("VatId")
+        mtype = dictionary.get("Type")
 
         # Return an object of this model
-        return cls(id,
-                   name,
-                   email,
-                   tel_1,
-                   tel_2,
-                   number,
-                   price_group_id,
-                   language_id,
-                   vat_id,
-                   mtype)
+        return cls(id, name, email, tel_1, tel_2, number, price_group_id, language_id, vat_id, mtype)

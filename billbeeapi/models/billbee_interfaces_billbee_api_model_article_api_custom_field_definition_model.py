@@ -24,19 +24,14 @@ class BillbeeInterfacesBillbeeAPIModelArticleApiCustomFieldDefinitionModel(objec
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "id": 'Id',
-        "name": 'Name',
-        "configuration": 'Configuration',
-        "mtype": 'Type',
-        "is_nullable": 'IsNullable'
+        "id": "Id",
+        "name": "Name",
+        "configuration": "Configuration",
+        "mtype": "Type",
+        "is_nullable": "IsNullable",
     }
 
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 configuration=None,
-                 mtype=None,
-                 is_nullable=None):
+    def __init__(self, id=None, name=None, configuration=None, mtype=None, is_nullable=None):
         """Constructor for the BillbeeInterfacesBillbeeAPIModelArticleApiCustomFieldDefinitionModel class"""
 
         # Initialize members of the class
@@ -47,8 +42,7 @@ class BillbeeInterfacesBillbeeAPIModelArticleApiCustomFieldDefinitionModel(objec
         self.is_nullable = is_nullable
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -64,15 +58,11 @@ class BillbeeInterfacesBillbeeAPIModelArticleApiCustomFieldDefinitionModel(objec
             return None
 
         # Extract variables from the dictionary
-        id = dictionary.get('Id')
-        name = dictionary.get('Name')
-        configuration = dictionary.get('Configuration')
-        mtype = dictionary.get('Type')
-        is_nullable = dictionary.get('IsNullable')
+        id = dictionary.get("Id")
+        name = dictionary.get("Name")
+        configuration = dictionary.get("Configuration")
+        mtype = dictionary.get("Type")
+        is_nullable = dictionary.get("IsNullable")
 
         # Return an object of this model
-        return cls(id,
-                   name,
-                   configuration,
-                   mtype,
-                   is_nullable)
+        return cls(id, name, configuration, mtype, is_nullable)

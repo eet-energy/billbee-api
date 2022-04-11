@@ -25,13 +25,7 @@ class HttpRequest(object):
 
     """
 
-    def __init__(self,
-                 http_method,
-                 query_url,
-                 headers=None,
-                 query_parameters=None,
-                 parameters=None,
-                 files=None):
+    def __init__(self, http_method, query_url, headers=None, query_parameters=None, parameters=None, files=None):
         """Constructor for the HttpRequest class
 
         Args:
@@ -53,7 +47,7 @@ class HttpRequest(object):
         self.files = files
 
     def add_header(self, name, value):
-        """ Add a header to the HttpRequest.
+        """Add a header to the HttpRequest.
 
         Args:
             name (string): The name of the header.
@@ -63,7 +57,7 @@ class HttpRequest(object):
         self.headers[name] = value
 
     def add_parameter(self, name, value):
-        """ Add a parameter to the HttpRequest.
+        """Add a parameter to the HttpRequest.
 
         Args:
             name (string): The name of the parameter.
@@ -73,15 +67,12 @@ class HttpRequest(object):
         self.parameters[name] = value
 
     def add_query_parameter(self, name, value):
-        """ Add a query parameter to the HttpRequest.
+        """Add a query parameter to the HttpRequest.
 
         Args:
             name (string): The name of the query parameter.
             value (string): The value of the query parameter.
 
         """
-        self.query_url = APIHelper.append_url_with_query_parameters(
-            self.query_url,
-            {name: value}
-        )
+        self.query_url = APIHelper.append_url_with_query_parameters(self.query_url, {name: value})
         self.query_url = APIHelper.clean_url(self.query_url)

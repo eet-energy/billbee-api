@@ -26,23 +26,18 @@ class BillbeeInterfacesBillbeeAPIModelArticleImageRelationApiModel(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "url": 'Url',
-        "id": 'Id',
-        "thumb_path_ext": 'ThumbPathExt',
-        "thumb_url": 'ThumbUrl',
-        "position": 'Position',
-        "is_default": 'IsDefault',
-        "article_id": 'ArticleId'
+        "url": "Url",
+        "id": "Id",
+        "thumb_path_ext": "ThumbPathExt",
+        "thumb_url": "ThumbUrl",
+        "position": "Position",
+        "is_default": "IsDefault",
+        "article_id": "ArticleId",
     }
 
-    def __init__(self,
-                 url=None,
-                 id=None,
-                 thumb_path_ext=None,
-                 thumb_url=None,
-                 position=None,
-                 is_default=None,
-                 article_id=None):
+    def __init__(
+        self, url=None, id=None, thumb_path_ext=None, thumb_url=None, position=None, is_default=None, article_id=None
+    ):
         """Constructor for the BillbeeInterfacesBillbeeAPIModelArticleImageRelationApiModel class"""
 
         # Initialize members of the class
@@ -55,8 +50,7 @@ class BillbeeInterfacesBillbeeAPIModelArticleImageRelationApiModel(object):
         self.article_id = article_id
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -72,19 +66,13 @@ class BillbeeInterfacesBillbeeAPIModelArticleImageRelationApiModel(object):
             return None
 
         # Extract variables from the dictionary
-        url = dictionary.get('Url')
-        id = dictionary.get('Id')
-        thumb_path_ext = dictionary.get('ThumbPathExt')
-        thumb_url = dictionary.get('ThumbUrl')
-        position = dictionary.get('Position')
-        is_default = dictionary.get('IsDefault')
-        article_id = dictionary.get('ArticleId')
+        url = dictionary.get("Url")
+        id = dictionary.get("Id")
+        thumb_path_ext = dictionary.get("ThumbPathExt")
+        thumb_url = dictionary.get("ThumbUrl")
+        position = dictionary.get("Position")
+        is_default = dictionary.get("IsDefault")
+        article_id = dictionary.get("ArticleId")
 
         # Return an object of this model
-        return cls(url,
-                   id,
-                   thumb_path_ext,
-                   thumb_url,
-                   position,
-                   is_default,
-                   article_id)
+        return cls(url, id, thumb_path_ext, thumb_url, position, is_default, article_id)

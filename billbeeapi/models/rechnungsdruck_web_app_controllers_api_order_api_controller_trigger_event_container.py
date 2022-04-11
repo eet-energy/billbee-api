@@ -21,14 +21,9 @@ class RechnungsdruckWebAppControllersApiOrderApiControllerTriggerEventContainer(
     """
 
     # Create a mapping from Model property names to API property names
-    _names = {
-        "name": 'Name',
-        "delay_in_minutes": 'DelayInMinutes'
-    }
+    _names = {"name": "Name", "delay_in_minutes": "DelayInMinutes"}
 
-    def __init__(self,
-                 name=None,
-                 delay_in_minutes=None):
+    def __init__(self, name=None, delay_in_minutes=None):
         """Constructor for the RechnungsdruckWebAppControllersApiOrderApiControllerTriggerEventContainer class"""
 
         # Initialize members of the class
@@ -36,8 +31,7 @@ class RechnungsdruckWebAppControllersApiOrderApiControllerTriggerEventContainer(
         self.delay_in_minutes = delay_in_minutes
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -53,9 +47,8 @@ class RechnungsdruckWebAppControllersApiOrderApiControllerTriggerEventContainer(
             return None
 
         # Extract variables from the dictionary
-        name = dictionary.get('Name')
-        delay_in_minutes = dictionary.get('DelayInMinutes')
+        name = dictionary.get("Name")
+        delay_in_minutes = dictionary.get("DelayInMinutes")
 
         # Return an object of this model
-        return cls(name,
-                   delay_in_minutes)
+        return cls(name, delay_in_minutes)

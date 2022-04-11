@@ -26,23 +26,25 @@ class BillbeeInterfacesBillbeeAPIModelStockArticleApiModel(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "name": 'Name',
-        "stock_id": 'StockId',
-        "stock_current": 'StockCurrent',
-        "stock_warning": 'StockWarning',
-        "stock_code": 'StockCode',
-        "unfulfilled_amount": 'UnfulfilledAmount',
-        "stock_desired": 'StockDesired'
+        "name": "Name",
+        "stock_id": "StockId",
+        "stock_current": "StockCurrent",
+        "stock_warning": "StockWarning",
+        "stock_code": "StockCode",
+        "unfulfilled_amount": "UnfulfilledAmount",
+        "stock_desired": "StockDesired",
     }
 
-    def __init__(self,
-                 name=None,
-                 stock_id=None,
-                 stock_current=None,
-                 stock_warning=None,
-                 stock_code=None,
-                 unfulfilled_amount=None,
-                 stock_desired=None):
+    def __init__(
+        self,
+        name=None,
+        stock_id=None,
+        stock_current=None,
+        stock_warning=None,
+        stock_code=None,
+        unfulfilled_amount=None,
+        stock_desired=None,
+    ):
         """Constructor for the BillbeeInterfacesBillbeeAPIModelStockArticleApiModel class"""
 
         # Initialize members of the class
@@ -55,8 +57,7 @@ class BillbeeInterfacesBillbeeAPIModelStockArticleApiModel(object):
         self.stock_desired = stock_desired
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -72,19 +73,13 @@ class BillbeeInterfacesBillbeeAPIModelStockArticleApiModel(object):
             return None
 
         # Extract variables from the dictionary
-        name = dictionary.get('Name')
-        stock_id = dictionary.get('StockId')
-        stock_current = dictionary.get('StockCurrent')
-        stock_warning = dictionary.get('StockWarning')
-        stock_code = dictionary.get('StockCode')
-        unfulfilled_amount = dictionary.get('UnfulfilledAmount')
-        stock_desired = dictionary.get('StockDesired')
+        name = dictionary.get("Name")
+        stock_id = dictionary.get("StockId")
+        stock_current = dictionary.get("StockCurrent")
+        stock_warning = dictionary.get("StockWarning")
+        stock_code = dictionary.get("StockCode")
+        unfulfilled_amount = dictionary.get("UnfulfilledAmount")
+        stock_desired = dictionary.get("StockDesired")
 
         # Return an object of this model
-        return cls(name,
-                   stock_id,
-                   stock_current,
-                   stock_warning,
-                   stock_code,
-                   unfulfilled_amount,
-                   stock_desired)
+        return cls(name, stock_id, stock_current, stock_warning, stock_code, unfulfilled_amount, stock_desired)

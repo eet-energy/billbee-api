@@ -20,20 +20,16 @@ class BillbeeInterfacesBillbeeAPIModelGetReservedAmountResponseData(object):
     """
 
     # Create a mapping from Model property names to API property names
-    _names = {
-        "reserved_amount": 'ReservedAmount'
-    }
+    _names = {"reserved_amount": "ReservedAmount"}
 
-    def __init__(self,
-                 reserved_amount=None):
+    def __init__(self, reserved_amount=None):
         """Constructor for the BillbeeInterfacesBillbeeAPIModelGetReservedAmountResponseData class"""
 
         # Initialize members of the class
         self.reserved_amount = reserved_amount
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -49,7 +45,7 @@ class BillbeeInterfacesBillbeeAPIModelGetReservedAmountResponseData(object):
             return None
 
         # Extract variables from the dictionary
-        reserved_amount = dictionary.get('ReservedAmount')
+        reserved_amount = dictionary.get("ReservedAmount")
 
         # Return an object of this model
         return cls(reserved_amount)

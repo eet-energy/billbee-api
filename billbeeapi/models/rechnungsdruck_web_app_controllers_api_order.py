@@ -34,37 +34,39 @@ class RechnungsdruckWebAppControllersApiOrder(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "id": 'Id',
-        "external_id": 'ExternalId',
-        "invoice_number": 'InvoiceNumber',
-        "invoice_created_at": 'InvoiceCreatedAt',
-        "invoice_date": 'InvoiceDate',
-        "created_at": 'CreatedAt',
-        "paid_at": 'PaidAt',
-        "shipped_at": 'ShippedAt',
-        "has_invoice": 'HasInvoice',
-        "order_state_id": 'OrderStateId',
-        "order_state_text": 'OrderStateText',
-        "total_gross": 'TotalGross',
-        "shop_name": 'ShopName',
-        "can_create_auto_invoice": 'CanCreateAutoInvoice'
+        "id": "Id",
+        "external_id": "ExternalId",
+        "invoice_number": "InvoiceNumber",
+        "invoice_created_at": "InvoiceCreatedAt",
+        "invoice_date": "InvoiceDate",
+        "created_at": "CreatedAt",
+        "paid_at": "PaidAt",
+        "shipped_at": "ShippedAt",
+        "has_invoice": "HasInvoice",
+        "order_state_id": "OrderStateId",
+        "order_state_text": "OrderStateText",
+        "total_gross": "TotalGross",
+        "shop_name": "ShopName",
+        "can_create_auto_invoice": "CanCreateAutoInvoice",
     }
 
-    def __init__(self,
-                 id=None,
-                 external_id=None,
-                 invoice_number=None,
-                 invoice_created_at=None,
-                 invoice_date=None,
-                 created_at=None,
-                 paid_at=None,
-                 shipped_at=None,
-                 has_invoice=None,
-                 order_state_id=None,
-                 order_state_text=None,
-                 total_gross=None,
-                 shop_name=None,
-                 can_create_auto_invoice=None):
+    def __init__(
+        self,
+        id=None,
+        external_id=None,
+        invoice_number=None,
+        invoice_created_at=None,
+        invoice_date=None,
+        created_at=None,
+        paid_at=None,
+        shipped_at=None,
+        has_invoice=None,
+        order_state_id=None,
+        order_state_text=None,
+        total_gross=None,
+        shop_name=None,
+        can_create_auto_invoice=None,
+    ):
         """Constructor for the RechnungsdruckWebAppControllersApiOrder class"""
 
         # Initialize members of the class
@@ -84,8 +86,7 @@ class RechnungsdruckWebAppControllersApiOrder(object):
         self.can_create_auto_invoice = can_create_auto_invoice
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -101,33 +102,55 @@ class RechnungsdruckWebAppControllersApiOrder(object):
             return None
 
         # Extract variables from the dictionary
-        id = dictionary.get('Id')
-        external_id = dictionary.get('ExternalId')
-        invoice_number = dictionary.get('InvoiceNumber')
-        invoice_created_at = APIHelper.RFC3339DateTime.from_value(dictionary.get("InvoiceCreatedAt")).datetime if dictionary.get("InvoiceCreatedAt") else None
-        invoice_date = APIHelper.RFC3339DateTime.from_value(dictionary.get("InvoiceDate")).datetime if dictionary.get("InvoiceDate") else None
-        created_at = APIHelper.RFC3339DateTime.from_value(dictionary.get("CreatedAt")).datetime if dictionary.get("CreatedAt") else None
-        paid_at = APIHelper.RFC3339DateTime.from_value(dictionary.get("PaidAt")).datetime if dictionary.get("PaidAt") else None
-        shipped_at = APIHelper.RFC3339DateTime.from_value(dictionary.get("ShippedAt")).datetime if dictionary.get("ShippedAt") else None
-        has_invoice = dictionary.get('HasInvoice')
-        order_state_id = dictionary.get('OrderStateId')
-        order_state_text = dictionary.get('OrderStateText')
-        total_gross = dictionary.get('TotalGross')
-        shop_name = dictionary.get('ShopName')
-        can_create_auto_invoice = dictionary.get('CanCreateAutoInvoice')
+        id = dictionary.get("Id")
+        external_id = dictionary.get("ExternalId")
+        invoice_number = dictionary.get("InvoiceNumber")
+        invoice_created_at = (
+            APIHelper.RFC3339DateTime.from_value(dictionary.get("InvoiceCreatedAt")).datetime
+            if dictionary.get("InvoiceCreatedAt")
+            else None
+        )
+        invoice_date = (
+            APIHelper.RFC3339DateTime.from_value(dictionary.get("InvoiceDate")).datetime
+            if dictionary.get("InvoiceDate")
+            else None
+        )
+        created_at = (
+            APIHelper.RFC3339DateTime.from_value(dictionary.get("CreatedAt")).datetime
+            if dictionary.get("CreatedAt")
+            else None
+        )
+        paid_at = (
+            APIHelper.RFC3339DateTime.from_value(dictionary.get("PaidAt")).datetime
+            if dictionary.get("PaidAt")
+            else None
+        )
+        shipped_at = (
+            APIHelper.RFC3339DateTime.from_value(dictionary.get("ShippedAt")).datetime
+            if dictionary.get("ShippedAt")
+            else None
+        )
+        has_invoice = dictionary.get("HasInvoice")
+        order_state_id = dictionary.get("OrderStateId")
+        order_state_text = dictionary.get("OrderStateText")
+        total_gross = dictionary.get("TotalGross")
+        shop_name = dictionary.get("ShopName")
+        can_create_auto_invoice = dictionary.get("CanCreateAutoInvoice")
 
         # Return an object of this model
-        return cls(id,
-                   external_id,
-                   invoice_number,
-                   invoice_created_at,
-                   invoice_date,
-                   created_at,
-                   paid_at,
-                   shipped_at,
-                   has_invoice,
-                   order_state_id,
-                   order_state_text,
-                   total_gross,
-                   shop_name,
-                   can_create_auto_invoice)
+        return cls(
+            id,
+            external_id,
+            invoice_number,
+            invoice_created_at,
+            invoice_date,
+            created_at,
+            paid_at,
+            shipped_at,
+            has_invoice,
+            order_state_id,
+            order_state_text,
+            total_gross,
+            shop_name,
+            can_create_auto_invoice,
+        )

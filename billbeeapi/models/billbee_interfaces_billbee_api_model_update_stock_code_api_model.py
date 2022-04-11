@@ -22,18 +22,9 @@ class BillbeeInterfacesBillbeeAPIModelUpdateStockCodeApiModel(object):
     """
 
     # Create a mapping from Model property names to API property names
-    _names = {
-        "billbee_id": 'BillbeeId',
-        "sku": 'Sku',
-        "stock_id": 'StockId',
-        "stock_code": 'StockCode'
-    }
+    _names = {"billbee_id": "BillbeeId", "sku": "Sku", "stock_id": "StockId", "stock_code": "StockCode"}
 
-    def __init__(self,
-                 billbee_id=None,
-                 sku=None,
-                 stock_id=None,
-                 stock_code=None):
+    def __init__(self, billbee_id=None, sku=None, stock_id=None, stock_code=None):
         """Constructor for the BillbeeInterfacesBillbeeAPIModelUpdateStockCodeApiModel class"""
 
         # Initialize members of the class
@@ -43,8 +34,7 @@ class BillbeeInterfacesBillbeeAPIModelUpdateStockCodeApiModel(object):
         self.stock_code = stock_code
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -60,13 +50,10 @@ class BillbeeInterfacesBillbeeAPIModelUpdateStockCodeApiModel(object):
             return None
 
         # Extract variables from the dictionary
-        billbee_id = dictionary.get('BillbeeId')
-        sku = dictionary.get('Sku')
-        stock_id = dictionary.get('StockId')
-        stock_code = dictionary.get('StockCode')
+        billbee_id = dictionary.get("BillbeeId")
+        sku = dictionary.get("Sku")
+        stock_id = dictionary.get("StockId")
+        stock_code = dictionary.get("StockCode")
 
         # Return an object of this model
-        return cls(billbee_id,
-                   sku,
-                   stock_id,
-                   stock_code)
+        return cls(billbee_id, sku, stock_id, stock_code)

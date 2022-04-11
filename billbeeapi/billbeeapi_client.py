@@ -10,13 +10,10 @@ from billbeeapi.decorators import lazy_property
 from billbeeapi.configuration import Configuration
 from billbeeapi.configuration import Environment
 from billbeeapi.controllers.products_controller import ProductsController
-from billbeeapi.controllers.provisioning_controller\
-    import ProvisioningController
-from billbeeapi.controllers.cloud_storage_controller\
-    import CloudStorageController
+from billbeeapi.controllers.provisioning_controller import ProvisioningController
+from billbeeapi.controllers.cloud_storage_controller import CloudStorageController
 from billbeeapi.controllers.customers_controller import CustomersController
-from billbeeapi.controllers.customer_addresses_controller\
-    import CustomerAddressesController
+from billbeeapi.controllers.customer_addresses_controller import CustomerAddressesController
 from billbeeapi.controllers.enum_api_controller import EnumApiController
 from billbeeapi.controllers.events_controller import EventsController
 from billbeeapi.controllers.orders_controller import OrdersController
@@ -25,7 +22,6 @@ from billbeeapi.controllers.webhooks_controller import WebhooksController
 
 
 class BillbeeapiClient(object):
-
     @lazy_property
     def products(self):
         return ProductsController(self.config)
@@ -66,19 +62,26 @@ class BillbeeapiClient(object):
     def webhooks(self):
         return WebhooksController(self.config)
 
-    def __init__(self, timeout=60, max_retries=3, backoff_factor=0,
-                 environment=Environment.PRODUCTION,
-                 basic_auth_user_name='TODO: Replace',
-                 basic_auth_password='TODO: Replace',
-                 api_key='TODO: Replace',
-                 config=None):
+    def __init__(
+        self,
+        timeout=60,
+        max_retries=3,
+        backoff_factor=0,
+        environment=Environment.PRODUCTION,
+        basic_auth_user_name="TODO: Replace",
+        basic_auth_password="TODO: Replace",
+        api_key="TODO: Replace",
+        config=None,
+    ):
         if config is None:
-            self.config = Configuration(timeout=timeout,
-                                        max_retries=max_retries,
-                                        backoff_factor=backoff_factor,
-                                        environment=environment,
-                                        basic_auth_user_name=basic_auth_user_name,
-                                        basic_auth_password=basic_auth_password,
-                                        api_key=api_key)
+            self.config = Configuration(
+                timeout=timeout,
+                max_retries=max_retries,
+                backoff_factor=backoff_factor,
+                environment=environment,
+                basic_auth_user_name=basic_auth_user_name,
+                basic_auth_password=basic_auth_password,
+                api_key=api_key,
+            )
         else:
             self.config = config

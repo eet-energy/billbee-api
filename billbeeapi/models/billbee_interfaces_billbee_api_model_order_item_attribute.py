@@ -22,18 +22,9 @@ class BillbeeInterfacesBillbeeAPIModelOrderItemAttribute(object):
     """
 
     # Create a mapping from Model property names to API property names
-    _names = {
-        "id": 'Id',
-        "name": 'Name',
-        "value": 'Value',
-        "price": 'Price'
-    }
+    _names = {"id": "Id", "name": "Name", "value": "Value", "price": "Price"}
 
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 value=None,
-                 price=None):
+    def __init__(self, id=None, name=None, value=None, price=None):
         """Constructor for the BillbeeInterfacesBillbeeAPIModelOrderItemAttribute class"""
 
         # Initialize members of the class
@@ -43,8 +34,7 @@ class BillbeeInterfacesBillbeeAPIModelOrderItemAttribute(object):
         self.price = price
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -60,13 +50,10 @@ class BillbeeInterfacesBillbeeAPIModelOrderItemAttribute(object):
             return None
 
         # Extract variables from the dictionary
-        id = dictionary.get('Id')
-        name = dictionary.get('Name')
-        value = dictionary.get('Value')
-        price = dictionary.get('Price')
+        id = dictionary.get("Id")
+        name = dictionary.get("Name")
+        value = dictionary.get("Value")
+        price = dictionary.get("Price")
 
         # Return an object of this model
-        return cls(id,
-                   name,
-                   value,
-                   price)
+        return cls(id, name, value, price)

@@ -19,8 +19,7 @@ class ProvisioningController(BaseController):
     def __init__(self, config, call_back=None):
         super(ProvisioningController, self).__init__(config, call_back)
 
-    def automatic_provisioning_create_account(self,
-                                              model):
+    def automatic_provisioning_create_account(self, model):
         """Does a POST request to /api/v1/automaticprovision/createaccount.
 
         Creates a new Billbee user account with the data passed
@@ -42,18 +41,18 @@ class ProvisioningController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/automaticprovision/createaccount'
+        _url_path = "/api/v1/automaticprovision/createaccount"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'content-type': 'application/json; charset=utf-8'
-        }
+        _headers = {"content-type": "application/json; charset=utf-8"}
 
         # Prepare and execute request
-        _request = self.config.http_client.post(_query_url, headers=_headers, parameters=APIHelper.json_serialize(model))
+        _request = self.config.http_client.post(
+            _query_url, headers=_headers, parameters=APIHelper.json_serialize(model)
+        )
         BasicAuth.apply(self.config, _request)
         _response = self.execute_request(_request)
         self.validate_response(_response)
@@ -79,7 +78,7 @@ class ProvisioningController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/automaticprovision/termsinfo'
+        _url_path = "/api/v1/automaticprovision/termsinfo"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)

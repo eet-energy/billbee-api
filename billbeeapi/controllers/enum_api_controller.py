@@ -36,7 +36,7 @@ class EnumApiController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/enums/paymenttypes'
+        _url_path = "/api/v1/enums/paymenttypes"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
@@ -68,7 +68,7 @@ class EnumApiController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/enums/shippingcarriers'
+        _url_path = "/api/v1/enums/shippingcarriers"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
@@ -100,7 +100,7 @@ class EnumApiController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/enums/orderstates'
+        _url_path = "/api/v1/enums/orderstates"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)

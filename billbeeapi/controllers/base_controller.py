@@ -27,9 +27,7 @@ class BaseController(object):
     """
 
     def global_headers(self):
-        return {
-            'user-agent': 'APIMATIC 2.0'
-        }
+        return {"user-agent": "APIMATIC 2.0"}
 
     def __init__(self, config, call_back=None):
         self._config = config
@@ -91,4 +89,4 @@ class BaseController(object):
 
         """
         if (response.status_code < 200) or (response.status_code > 208):  # [200,208] = HTTP OK
-            raise APIException('HTTP response not OK.', response)
+            raise APIException("HTTP response not OK.", response)

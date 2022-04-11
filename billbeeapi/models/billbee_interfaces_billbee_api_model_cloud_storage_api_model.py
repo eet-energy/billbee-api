@@ -22,18 +22,9 @@ class BillbeeInterfacesBillbeeAPIModelCloudStorageApiModel(object):
     """
 
     # Create a mapping from Model property names to API property names
-    _names = {
-        "id": 'Id',
-        "name": 'Name',
-        "mtype": 'Type',
-        "used_as_printer": 'UsedAsPrinter'
-    }
+    _names = {"id": "Id", "name": "Name", "mtype": "Type", "used_as_printer": "UsedAsPrinter"}
 
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 mtype=None,
-                 used_as_printer=None):
+    def __init__(self, id=None, name=None, mtype=None, used_as_printer=None):
         """Constructor for the BillbeeInterfacesBillbeeAPIModelCloudStorageApiModel class"""
 
         # Initialize members of the class
@@ -43,8 +34,7 @@ class BillbeeInterfacesBillbeeAPIModelCloudStorageApiModel(object):
         self.used_as_printer = used_as_printer
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -60,13 +50,10 @@ class BillbeeInterfacesBillbeeAPIModelCloudStorageApiModel(object):
             return None
 
         # Extract variables from the dictionary
-        id = dictionary.get('Id')
-        name = dictionary.get('Name')
-        mtype = dictionary.get('Type')
-        used_as_printer = dictionary.get('UsedAsPrinter')
+        id = dictionary.get("Id")
+        name = dictionary.get("Name")
+        mtype = dictionary.get("Type")
+        used_as_printer = dictionary.get("UsedAsPrinter")
 
         # Return an object of this model
-        return cls(id,
-                   name,
-                   mtype,
-                   used_as_printer)
+        return cls(id, name, mtype, used_as_printer)

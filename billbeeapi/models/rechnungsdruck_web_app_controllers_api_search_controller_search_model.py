@@ -21,16 +21,9 @@ class RechnungsdruckWebAppControllersApiSearchControllerSearchModel(object):
     """
 
     # Create a mapping from Model property names to API property names
-    _names = {
-        "mtype": 'Type',
-        "term": 'Term',
-        "search_mode": 'SearchMode'
-    }
+    _names = {"mtype": "Type", "term": "Term", "search_mode": "SearchMode"}
 
-    def __init__(self,
-                 mtype=None,
-                 term=None,
-                 search_mode=None):
+    def __init__(self, mtype=None, term=None, search_mode=None):
         """Constructor for the RechnungsdruckWebAppControllersApiSearchControllerSearchModel class"""
 
         # Initialize members of the class
@@ -39,8 +32,7 @@ class RechnungsdruckWebAppControllersApiSearchControllerSearchModel(object):
         self.search_mode = search_mode
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -56,11 +48,9 @@ class RechnungsdruckWebAppControllersApiSearchControllerSearchModel(object):
             return None
 
         # Extract variables from the dictionary
-        mtype = dictionary.get('Type')
-        term = dictionary.get('Term')
-        search_mode = dictionary.get('SearchMode')
+        mtype = dictionary.get("Type")
+        term = dictionary.get("Term")
+        search_mode = dictionary.get("SearchMode")
 
         # Return an object of this model
-        return cls(mtype,
-                   term,
-                   search_mode)
+        return cls(mtype, term, search_mode)

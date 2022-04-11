@@ -10,8 +10,12 @@ from billbeeapi.api_helper import APIHelper
 from billbeeapi.configuration import Server
 from billbeeapi.controllers.base_controller import BaseController
 from billbeeapi.http.auth.basic_auth import BasicAuth
-from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_result_rechnungsdruck_web_app_controllers_api_shipment_with_label_result import RechnungsdruckWebAppControllersApiApiResultRechnungsdruckWebAppControllersApiShipmentWithLabelResult
-from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_paged_result_system_collections_generic_list_billbee_interfaces_billbee_api_model_shipment import RechnungsdruckWebAppControllersApiApiPagedResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelShipment
+from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_result_rechnungsdruck_web_app_controllers_api_shipment_with_label_result import (
+    RechnungsdruckWebAppControllersApiApiResultRechnungsdruckWebAppControllersApiShipmentWithLabelResult,
+)
+from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_paged_result_system_collections_generic_list_billbee_interfaces_billbee_api_model_shipment import (
+    RechnungsdruckWebAppControllersApiApiPagedResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelShipment,
+)
 
 
 class ShipmentsController(BaseController):
@@ -21,8 +25,7 @@ class ShipmentsController(BaseController):
     def __init__(self, config, call_back=None):
         super(ShipmentsController, self).__init__(config, call_back)
 
-    def shipment_post_shipment(self,
-                               model):
+    def shipment_post_shipment(self, model):
         """Does a POST request to /api/v1/shipment/shipment.
 
         Creates a new shipment with the selected Shippingprovider
@@ -43,18 +46,18 @@ class ShipmentsController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/shipment/shipment'
+        _url_path = "/api/v1/shipment/shipment"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'content-type': 'application/json; charset=utf-8'
-        }
+        _headers = {"content-type": "application/json; charset=utf-8"}
 
         # Prepare and execute request
-        _request = self.config.http_client.post(_query_url, headers=_headers, parameters=APIHelper.json_serialize(model))
+        _request = self.config.http_client.post(
+            _query_url, headers=_headers, parameters=APIHelper.json_serialize(model)
+        )
         BasicAuth.apply(self.config, _request)
         _response = self.execute_request(_request)
         self.validate_response(_response)
@@ -80,7 +83,7 @@ class ShipmentsController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/shipment/shippingproviders'
+        _url_path = "/api/v1/shipment/shippingproviders"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
@@ -95,8 +98,7 @@ class ShipmentsController(BaseController):
 
         return decoded
 
-    def shipment_ship_with_label(self,
-                                 shipment_information):
+    def shipment_ship_with_label(self, shipment_information):
         """Does a POST request to /api/v1/shipment/shipwithlabel.
 
         Creates a shipment for an order in billbee
@@ -119,24 +121,26 @@ class ShipmentsController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/shipment/shipwithlabel'
+        _url_path = "/api/v1/shipment/shipwithlabel"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json',
-            'content-type': 'application/json; charset=utf-8'
-        }
+        _headers = {"accept": "application/json", "content-type": "application/json; charset=utf-8"}
 
         # Prepare and execute request
-        _request = self.config.http_client.post(_query_url, headers=_headers, parameters=APIHelper.json_serialize(shipment_information))
+        _request = self.config.http_client.post(
+            _query_url, headers=_headers, parameters=APIHelper.json_serialize(shipment_information)
+        )
         BasicAuth.apply(self.config, _request)
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiResultRechnungsdruckWebAppControllersApiShipmentWithLabelResult.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiResultRechnungsdruckWebAppControllersApiShipmentWithLabelResult.from_dictionary,
+        )
 
         return decoded
 
@@ -157,7 +161,7 @@ class ShipmentsController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/shipment/shippingcarriers'
+        _url_path = "/api/v1/shipment/shippingcarriers"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
@@ -189,7 +193,7 @@ class ShipmentsController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/shipment/ping'
+        _url_path = "/api/v1/shipment/ping"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
@@ -204,14 +208,16 @@ class ShipmentsController(BaseController):
 
         return decoded
 
-    def shipment_get_list(self,
-                          page=None,
-                          page_size=None,
-                          created_at_min=None,
-                          created_at_max=None,
-                          order_id=None,
-                          minimum_shipment_id=None,
-                          shipping_provider_id=None):
+    def shipment_get_list(
+        self,
+        page=None,
+        page_size=None,
+        created_at_min=None,
+        created_at_max=None,
+        order_id=None,
+        minimum_shipment_id=None,
+        shipping_provider_id=None,
+    ):
         """Does a GET request to /api/v1/shipment/shipments.
 
         Get a list of all shipments optionally filtered by date. All
@@ -248,28 +254,23 @@ class ShipmentsController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/shipment/shipments'
+        _url_path = "/api/v1/shipment/shipments"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_parameters = {
-            'page': page,
-            'pageSize': page_size,
-            'createdAtMin': APIHelper.when_defined(APIHelper.RFC3339DateTime, created_at_min),
-            'createdAtMax': APIHelper.when_defined(APIHelper.RFC3339DateTime, created_at_max),
-            'orderId': order_id,
-            'minimumShipmentId': minimum_shipment_id,
-            'shippingProviderId': shipping_provider_id
+            "page": page,
+            "pageSize": page_size,
+            "createdAtMin": APIHelper.when_defined(APIHelper.RFC3339DateTime, created_at_min),
+            "createdAtMax": APIHelper.when_defined(APIHelper.RFC3339DateTime, created_at_max),
+            "orderId": order_id,
+            "minimumShipmentId": minimum_shipment_id,
+            "shippingProviderId": shipping_provider_id,
         }
-        _query_builder = APIHelper.append_url_with_query_parameters(
-            _query_builder,
-            _query_parameters
-        )
+        _query_builder = APIHelper.append_url_with_query_parameters(_query_builder, _query_parameters)
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json'
-        }
+        _headers = {"accept": "application/json"}
 
         # Prepare and execute request
         _request = self.config.http_client.get(_query_url, headers=_headers)
@@ -277,6 +278,9 @@ class ShipmentsController(BaseController):
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiPagedResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelShipment.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiPagedResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelShipment.from_dictionary,
+        )
 
         return decoded

@@ -29,27 +29,29 @@ class BillbeeInterfacesBillbeeAPIModelsOrderPayment(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "billbee_id": 'BillbeeId',
-        "transaction_id": 'TransactionId',
-        "pay_date": 'PayDate',
-        "payment_type": 'PaymentType',
-        "source_technology": 'SourceTechnology',
-        "source_text": 'SourceText',
-        "pay_value": 'PayValue',
-        "purpose": 'Purpose',
-        "name": 'Name'
+        "billbee_id": "BillbeeId",
+        "transaction_id": "TransactionId",
+        "pay_date": "PayDate",
+        "payment_type": "PaymentType",
+        "source_technology": "SourceTechnology",
+        "source_text": "SourceText",
+        "pay_value": "PayValue",
+        "purpose": "Purpose",
+        "name": "Name",
     }
 
-    def __init__(self,
-                 billbee_id=None,
-                 transaction_id=None,
-                 pay_date=None,
-                 payment_type=None,
-                 source_technology=None,
-                 source_text=None,
-                 pay_value=None,
-                 purpose=None,
-                 name=None):
+    def __init__(
+        self,
+        billbee_id=None,
+        transaction_id=None,
+        pay_date=None,
+        payment_type=None,
+        source_technology=None,
+        source_text=None,
+        pay_value=None,
+        purpose=None,
+        name=None,
+    ):
         """Constructor for the BillbeeInterfacesBillbeeAPIModelsOrderPayment class"""
 
         # Initialize members of the class
@@ -64,8 +66,7 @@ class BillbeeInterfacesBillbeeAPIModelsOrderPayment(object):
         self.name = name
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -81,23 +82,21 @@ class BillbeeInterfacesBillbeeAPIModelsOrderPayment(object):
             return None
 
         # Extract variables from the dictionary
-        billbee_id = dictionary.get('BillbeeId')
-        transaction_id = dictionary.get('TransactionId')
-        pay_date = APIHelper.RFC3339DateTime.from_value(dictionary.get("PayDate")).datetime if dictionary.get("PayDate") else None
-        payment_type = dictionary.get('PaymentType')
-        source_technology = dictionary.get('SourceTechnology')
-        source_text = dictionary.get('SourceText')
-        pay_value = dictionary.get('PayValue')
-        purpose = dictionary.get('Purpose')
-        name = dictionary.get('Name')
+        billbee_id = dictionary.get("BillbeeId")
+        transaction_id = dictionary.get("TransactionId")
+        pay_date = (
+            APIHelper.RFC3339DateTime.from_value(dictionary.get("PayDate")).datetime
+            if dictionary.get("PayDate")
+            else None
+        )
+        payment_type = dictionary.get("PaymentType")
+        source_technology = dictionary.get("SourceTechnology")
+        source_text = dictionary.get("SourceText")
+        pay_value = dictionary.get("PayValue")
+        purpose = dictionary.get("Purpose")
+        name = dictionary.get("Name")
 
         # Return an object of this model
-        return cls(billbee_id,
-                   transaction_id,
-                   pay_date,
-                   payment_type,
-                   source_technology,
-                   source_text,
-                   pay_value,
-                   purpose,
-                   name)
+        return cls(
+            billbee_id, transaction_id, pay_date, payment_type, source_technology, source_text, pay_value, purpose, name
+        )

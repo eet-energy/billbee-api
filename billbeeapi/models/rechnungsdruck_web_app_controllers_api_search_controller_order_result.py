@@ -25,21 +25,23 @@ class RechnungsdruckWebAppControllersApiSearchControllerOrderResult(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "id": 'Id',
-        "external_reference": 'ExternalReference',
-        "buyer_name": 'BuyerName',
-        "invoice_number": 'InvoiceNumber',
-        "customer_name": 'CustomerName',
-        "article_texts": 'ArticleTexts'
+        "id": "Id",
+        "external_reference": "ExternalReference",
+        "buyer_name": "BuyerName",
+        "invoice_number": "InvoiceNumber",
+        "customer_name": "CustomerName",
+        "article_texts": "ArticleTexts",
     }
 
-    def __init__(self,
-                 id=None,
-                 external_reference=None,
-                 buyer_name=None,
-                 invoice_number=None,
-                 customer_name=None,
-                 article_texts=None):
+    def __init__(
+        self,
+        id=None,
+        external_reference=None,
+        buyer_name=None,
+        invoice_number=None,
+        customer_name=None,
+        article_texts=None,
+    ):
         """Constructor for the RechnungsdruckWebAppControllersApiSearchControllerOrderResult class"""
 
         # Initialize members of the class
@@ -51,8 +53,7 @@ class RechnungsdruckWebAppControllersApiSearchControllerOrderResult(object):
         self.article_texts = article_texts
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -68,17 +69,12 @@ class RechnungsdruckWebAppControllersApiSearchControllerOrderResult(object):
             return None
 
         # Extract variables from the dictionary
-        id = dictionary.get('Id')
-        external_reference = dictionary.get('ExternalReference')
-        buyer_name = dictionary.get('BuyerName')
-        invoice_number = dictionary.get('InvoiceNumber')
-        customer_name = dictionary.get('CustomerName')
-        article_texts = dictionary.get('ArticleTexts')
+        id = dictionary.get("Id")
+        external_reference = dictionary.get("ExternalReference")
+        buyer_name = dictionary.get("BuyerName")
+        invoice_number = dictionary.get("InvoiceNumber")
+        customer_name = dictionary.get("CustomerName")
+        article_texts = dictionary.get("ArticleTexts")
 
         # Return an object of this model
-        return cls(id,
-                   external_reference,
-                   buyer_name,
-                   invoice_number,
-                   customer_name,
-                   article_texts)
+        return cls(id, external_reference, buyer_name, invoice_number, customer_name, article_texts)

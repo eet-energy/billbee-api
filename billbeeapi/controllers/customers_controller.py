@@ -10,11 +10,21 @@ from billbeeapi.api_helper import APIHelper
 from billbeeapi.configuration import Server
 from billbeeapi.controllers.base_controller import BaseController
 from billbeeapi.http.auth.basic_auth import BasicAuth
-from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_paged_result_system_collections_generic_list_billbee_interfaces_billbee_api_model_customer_api_model import RechnungsdruckWebAppControllersApiApiPagedResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelCustomerApiModel
-from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_result_billbee_interfaces_billbee_api_model_customer_api_model import RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelCustomerApiModel
-from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_paged_result_system_collections_generic_list_rechnungsdruck_web_app_controllers_api_order import RechnungsdruckWebAppControllersApiApiPagedResultSystemCollectionsGenericListRechnungsdruckWebAppControllersApiOrder
-from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_paged_result_system_collections_generic_list_billbee_interfaces_billbee_api_model_customer_address_api_model import RechnungsdruckWebAppControllersApiApiPagedResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelCustomerAddressApiModel
-from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_result_billbee_interfaces_billbee_api_model_customer_address_api_model import RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelCustomerAddressApiModel
+from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_paged_result_system_collections_generic_list_billbee_interfaces_billbee_api_model_customer_api_model import (
+    RechnungsdruckWebAppControllersApiApiPagedResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelCustomerApiModel,
+)
+from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_result_billbee_interfaces_billbee_api_model_customer_api_model import (
+    RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelCustomerApiModel,
+)
+from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_paged_result_system_collections_generic_list_rechnungsdruck_web_app_controllers_api_order import (
+    RechnungsdruckWebAppControllersApiApiPagedResultSystemCollectionsGenericListRechnungsdruckWebAppControllersApiOrder,
+)
+from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_paged_result_system_collections_generic_list_billbee_interfaces_billbee_api_model_customer_address_api_model import (
+    RechnungsdruckWebAppControllersApiApiPagedResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelCustomerAddressApiModel,
+)
+from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_result_billbee_interfaces_billbee_api_model_customer_address_api_model import (
+    RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelCustomerAddressApiModel,
+)
 
 
 class CustomersController(BaseController):
@@ -24,9 +34,7 @@ class CustomersController(BaseController):
     def __init__(self, config, call_back=None):
         super(CustomersController, self).__init__(config, call_back)
 
-    def customer_get_all(self,
-                         page=None,
-                         page_size=None):
+    def customer_get_all(self, page=None, page_size=None):
         """Does a GET request to /api/v1/customers.
 
         Get a list of all customers
@@ -50,23 +58,15 @@ class CustomersController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/customers'
+        _url_path = "/api/v1/customers"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
-        _query_parameters = {
-            'page': page,
-            'pageSize': page_size
-        }
-        _query_builder = APIHelper.append_url_with_query_parameters(
-            _query_builder,
-            _query_parameters
-        )
+        _query_parameters = {"page": page, "pageSize": page_size}
+        _query_builder = APIHelper.append_url_with_query_parameters(_query_builder, _query_parameters)
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json'
-        }
+        _headers = {"accept": "application/json"}
 
         # Prepare and execute request
         _request = self.config.http_client.get(_query_url, headers=_headers)
@@ -74,12 +74,14 @@ class CustomersController(BaseController):
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiPagedResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelCustomerApiModel.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiPagedResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelCustomerApiModel.from_dictionary,
+        )
 
         return decoded
 
-    def customer_create(self,
-                        model):
+    def customer_create(self, model):
         """Does a POST request to /api/v1/customers.
 
         Creates a new customer
@@ -101,29 +103,30 @@ class CustomersController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/customers'
+        _url_path = "/api/v1/customers"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json',
-            'content-type': 'application/json; charset=utf-8'
-        }
+        _headers = {"accept": "application/json", "content-type": "application/json; charset=utf-8"}
 
         # Prepare and execute request
-        _request = self.config.http_client.post(_query_url, headers=_headers, parameters=APIHelper.json_serialize(model))
+        _request = self.config.http_client.post(
+            _query_url, headers=_headers, parameters=APIHelper.json_serialize(model)
+        )
         BasicAuth.apply(self.config, _request)
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelCustomerApiModel.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelCustomerApiModel.from_dictionary,
+        )
 
         return decoded
 
-    def customer_get_one(self,
-                         id):
+    def customer_get_one(self, id):
         """Does a GET request to /api/v1/customers/{id}.
 
         Queries a single customer by id
@@ -144,18 +147,14 @@ class CustomersController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/customers/{id}'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'id': {'value': id, 'encode': True}
-        })
+        _url_path = "/api/v1/customers/{id}"
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {"id": {"value": id, "encode": True}})
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json'
-        }
+        _headers = {"accept": "application/json"}
 
         # Prepare and execute request
         _request = self.config.http_client.get(_query_url, headers=_headers)
@@ -163,13 +162,14 @@ class CustomersController(BaseController):
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelCustomerApiModel.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelCustomerApiModel.from_dictionary,
+        )
 
         return decoded
 
-    def customer_update(self,
-                        model,
-                        id):
+    def customer_update(self, model, id):
         """Does a PUT request to /api/v1/customers/{id}.
 
         Updates a customer by id
@@ -192,19 +192,14 @@ class CustomersController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/customers/{id}'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'id': {'value': id, 'encode': True}
-        })
+        _url_path = "/api/v1/customers/{id}"
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {"id": {"value": id, "encode": True}})
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json',
-            'content-type': 'application/json; charset=utf-8'
-        }
+        _headers = {"accept": "application/json", "content-type": "application/json; charset=utf-8"}
 
         # Prepare and execute request
         _request = self.config.http_client.put(_query_url, headers=_headers, parameters=APIHelper.json_serialize(model))
@@ -212,14 +207,14 @@ class CustomersController(BaseController):
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelCustomerApiModel.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelCustomerApiModel.from_dictionary,
+        )
 
         return decoded
 
-    def customer_get_customer_orders(self,
-                                     id,
-                                     page=None,
-                                     page_size=None):
+    def customer_get_customer_orders(self, id, page=None, page_size=None):
         """Does a GET request to /api/v1/customers/{id}/orders.
 
         Queries a list of orders from a customer
@@ -244,26 +239,16 @@ class CustomersController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/customers/{id}/orders'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'id': {'value': id, 'encode': True}
-        })
+        _url_path = "/api/v1/customers/{id}/orders"
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {"id": {"value": id, "encode": True}})
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
-        _query_parameters = {
-            'page': page,
-            'pageSize': page_size
-        }
-        _query_builder = APIHelper.append_url_with_query_parameters(
-            _query_builder,
-            _query_parameters
-        )
+        _query_parameters = {"page": page, "pageSize": page_size}
+        _query_builder = APIHelper.append_url_with_query_parameters(_query_builder, _query_parameters)
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json'
-        }
+        _headers = {"accept": "application/json"}
 
         # Prepare and execute request
         _request = self.config.http_client.get(_query_url, headers=_headers)
@@ -271,14 +256,14 @@ class CustomersController(BaseController):
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiPagedResultSystemCollectionsGenericListRechnungsdruckWebAppControllersApiOrder.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiPagedResultSystemCollectionsGenericListRechnungsdruckWebAppControllersApiOrder.from_dictionary,
+        )
 
         return decoded
 
-    def customer_get_customer_addresses(self,
-                                        id,
-                                        page=None,
-                                        page_size=None):
+    def customer_get_customer_addresses(self, id, page=None, page_size=None):
         """Does a GET request to /api/v1/customers/{id}/addresses.
 
         Queries a list of addresses from a customer
@@ -303,26 +288,16 @@ class CustomersController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/customers/{id}/addresses'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'id': {'value': id, 'encode': True}
-        })
+        _url_path = "/api/v1/customers/{id}/addresses"
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {"id": {"value": id, "encode": True}})
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
-        _query_parameters = {
-            'page': page,
-            'pageSize': page_size
-        }
-        _query_builder = APIHelper.append_url_with_query_parameters(
-            _query_builder,
-            _query_parameters
-        )
+        _query_parameters = {"page": page, "pageSize": page_size}
+        _query_builder = APIHelper.append_url_with_query_parameters(_query_builder, _query_parameters)
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json'
-        }
+        _headers = {"accept": "application/json"}
 
         # Prepare and execute request
         _request = self.config.http_client.get(_query_url, headers=_headers)
@@ -330,13 +305,14 @@ class CustomersController(BaseController):
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiPagedResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelCustomerAddressApiModel.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiPagedResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelCustomerAddressApiModel.from_dictionary,
+        )
 
         return decoded
 
-    def customer_add_customer_address(self,
-                                      id,
-                                      model):
+    def customer_add_customer_address(self, id, model):
         """Does a POST request to /api/v1/customers/{id}/addresses.
 
         Id and  CustomerId will be ignored in model. If Id is set, the
@@ -360,32 +336,31 @@ class CustomersController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/customers/{id}/addresses'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'id': {'value': id, 'encode': True}
-        })
+        _url_path = "/api/v1/customers/{id}/addresses"
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {"id": {"value": id, "encode": True}})
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json',
-            'content-type': 'application/json; charset=utf-8'
-        }
+        _headers = {"accept": "application/json", "content-type": "application/json; charset=utf-8"}
 
         # Prepare and execute request
-        _request = self.config.http_client.post(_query_url, headers=_headers, parameters=APIHelper.json_serialize(model))
+        _request = self.config.http_client.post(
+            _query_url, headers=_headers, parameters=APIHelper.json_serialize(model)
+        )
         BasicAuth.apply(self.config, _request)
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelCustomerAddressApiModel.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelCustomerAddressApiModel.from_dictionary,
+        )
 
         return decoded
 
-    def customer_get_customer_address(self,
-                                      id):
+    def customer_get_customer_address(self, id):
         """Does a GET request to /api/v1/customers/addresses/{id}.
 
         Queries a single address from a customer
@@ -406,18 +381,14 @@ class CustomersController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/customers/addresses/{id}'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'id': {'value': id, 'encode': True}
-        })
+        _url_path = "/api/v1/customers/addresses/{id}"
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {"id": {"value": id, "encode": True}})
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json'
-        }
+        _headers = {"accept": "application/json"}
 
         # Prepare and execute request
         _request = self.config.http_client.get(_query_url, headers=_headers)
@@ -425,13 +396,14 @@ class CustomersController(BaseController):
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelCustomerAddressApiModel.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelCustomerAddressApiModel.from_dictionary,
+        )
 
         return decoded
 
-    def customer_update_address(self,
-                                model,
-                                id):
+    def customer_update_address(self, model, id):
         """Does a PUT request to /api/v1/customers/addresses/{id}.
 
         Id and CustomerId cannot be changed. Fields you do not send will
@@ -456,19 +428,14 @@ class CustomersController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/customers/addresses/{id}'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'id': {'value': id, 'encode': True}
-        })
+        _url_path = "/api/v1/customers/addresses/{id}"
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {"id": {"value": id, "encode": True}})
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json',
-            'content-type': 'application/json; charset=utf-8'
-        }
+        _headers = {"accept": "application/json", "content-type": "application/json; charset=utf-8"}
 
         # Prepare and execute request
         _request = self.config.http_client.put(_query_url, headers=_headers, parameters=APIHelper.json_serialize(model))
@@ -476,13 +443,14 @@ class CustomersController(BaseController):
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelCustomerAddressApiModel.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelCustomerAddressApiModel.from_dictionary,
+        )
 
         return decoded
 
-    def customer_patch_address(self,
-                               id,
-                               model):
+    def customer_patch_address(self, id, model):
         """Does a PATCH request to /api/v1/customers/addresses/{id}.
 
         Id and CustomerId cannot be changed
@@ -506,26 +474,26 @@ class CustomersController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/customers/addresses/{id}'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'id': {'value': id, 'encode': True}
-        })
+        _url_path = "/api/v1/customers/addresses/{id}"
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {"id": {"value": id, "encode": True}})
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json',
-            'content-type': 'application/json; charset=utf-8'
-        }
+        _headers = {"accept": "application/json", "content-type": "application/json; charset=utf-8"}
 
         # Prepare and execute request
-        _request = self.config.http_client.patch(_query_url, headers=_headers, parameters=APIHelper.json_serialize(model))
+        _request = self.config.http_client.patch(
+            _query_url, headers=_headers, parameters=APIHelper.json_serialize(model)
+        )
         BasicAuth.apply(self.config, _request)
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelCustomerAddressApiModel.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelCustomerAddressApiModel.from_dictionary,
+        )
 
         return decoded

@@ -20,14 +20,9 @@ class BillbeeInterfacesOrderMultiLanguageString(object):
     """
 
     # Create a mapping from Model property names to API property names
-    _names = {
-        "text": 'Text',
-        "language_code": 'LanguageCode'
-    }
+    _names = {"text": "Text", "language_code": "LanguageCode"}
 
-    def __init__(self,
-                 text=None,
-                 language_code=None):
+    def __init__(self, text=None, language_code=None):
         """Constructor for the BillbeeInterfacesOrderMultiLanguageString class"""
 
         # Initialize members of the class
@@ -35,8 +30,7 @@ class BillbeeInterfacesOrderMultiLanguageString(object):
         self.language_code = language_code
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -52,9 +46,8 @@ class BillbeeInterfacesOrderMultiLanguageString(object):
             return None
 
         # Extract variables from the dictionary
-        text = dictionary.get('Text')
-        language_code = dictionary.get('LanguageCode')
+        text = dictionary.get("Text")
+        language_code = dictionary.get("LanguageCode")
 
         # Return an object of this model
-        return cls(text,
-                   language_code)
+        return cls(text, language_code)

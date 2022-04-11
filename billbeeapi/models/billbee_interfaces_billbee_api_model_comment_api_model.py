@@ -24,20 +24,9 @@ class BillbeeInterfacesBillbeeAPIModelCommentApiModel(object):
     """
 
     # Create a mapping from Model property names to API property names
-    _names = {
-        "id": 'Id',
-        "from_customer": 'FromCustomer',
-        "text": 'Text',
-        "name": 'Name',
-        "created": 'Created'
-    }
+    _names = {"id": "Id", "from_customer": "FromCustomer", "text": "Text", "name": "Name", "created": "Created"}
 
-    def __init__(self,
-                 id=None,
-                 from_customer=None,
-                 text=None,
-                 name=None,
-                 created=None):
+    def __init__(self, id=None, from_customer=None, text=None, name=None, created=None):
         """Constructor for the BillbeeInterfacesBillbeeAPIModelCommentApiModel class"""
 
         # Initialize members of the class
@@ -48,8 +37,7 @@ class BillbeeInterfacesBillbeeAPIModelCommentApiModel(object):
         self.created = APIHelper.RFC3339DateTime(created) if created else None
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -65,15 +53,15 @@ class BillbeeInterfacesBillbeeAPIModelCommentApiModel(object):
             return None
 
         # Extract variables from the dictionary
-        id = dictionary.get('Id')
-        from_customer = dictionary.get('FromCustomer')
-        text = dictionary.get('Text')
-        name = dictionary.get('Name')
-        created = APIHelper.RFC3339DateTime.from_value(dictionary.get("Created")).datetime if dictionary.get("Created") else None
+        id = dictionary.get("Id")
+        from_customer = dictionary.get("FromCustomer")
+        text = dictionary.get("Text")
+        name = dictionary.get("Name")
+        created = (
+            APIHelper.RFC3339DateTime.from_value(dictionary.get("Created")).datetime
+            if dictionary.get("Created")
+            else None
+        )
 
         # Return an object of this model
-        return cls(id,
-                   from_customer,
-                   text,
-                   name,
-                   created)
+        return cls(id, from_customer, text, name, created)

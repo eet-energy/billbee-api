@@ -19,20 +19,16 @@ class RechnungsdruckWebAppControllersApiOrderStateUpdate(object):
     """
 
     # Create a mapping from Model property names to API property names
-    _names = {
-        "new_state_id": 'NewStateId'
-    }
+    _names = {"new_state_id": "NewStateId"}
 
-    def __init__(self,
-                 new_state_id=None):
+    def __init__(self, new_state_id=None):
         """Constructor for the RechnungsdruckWebAppControllersApiOrderStateUpdate class"""
 
         # Initialize members of the class
         self.new_state_id = new_state_id
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -48,7 +44,7 @@ class RechnungsdruckWebAppControllersApiOrderStateUpdate(object):
             return None
 
         # Extract variables from the dictionary
-        new_state_id = dictionary.get('NewStateId')
+        new_state_id = dictionary.get("NewStateId")
 
         # Return an object of this model
         return cls(new_state_id)

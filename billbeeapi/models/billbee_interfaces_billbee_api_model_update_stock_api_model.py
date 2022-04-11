@@ -34,27 +34,29 @@ class BillbeeInterfacesBillbeeAPIModelUpdateStockApiModel(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "billbee_id": 'BillbeeId',
-        "sku": 'Sku',
-        "stock_id": 'StockId',
-        "reason": 'Reason',
-        "old_quantity": 'OldQuantity',
-        "new_quantity": 'NewQuantity',
-        "delta_quantity": 'DeltaQuantity',
-        "force_send_stock_to_shops": 'ForceSendStockToShops',
-        "autosubtract_reserved_amount": 'AutosubtractReservedAmount'
+        "billbee_id": "BillbeeId",
+        "sku": "Sku",
+        "stock_id": "StockId",
+        "reason": "Reason",
+        "old_quantity": "OldQuantity",
+        "new_quantity": "NewQuantity",
+        "delta_quantity": "DeltaQuantity",
+        "force_send_stock_to_shops": "ForceSendStockToShops",
+        "autosubtract_reserved_amount": "AutosubtractReservedAmount",
     }
 
-    def __init__(self,
-                 billbee_id=None,
-                 sku=None,
-                 stock_id=None,
-                 reason=None,
-                 old_quantity=None,
-                 new_quantity=None,
-                 delta_quantity=None,
-                 force_send_stock_to_shops=None,
-                 autosubtract_reserved_amount=None):
+    def __init__(
+        self,
+        billbee_id=None,
+        sku=None,
+        stock_id=None,
+        reason=None,
+        old_quantity=None,
+        new_quantity=None,
+        delta_quantity=None,
+        force_send_stock_to_shops=None,
+        autosubtract_reserved_amount=None,
+    ):
         """Constructor for the BillbeeInterfacesBillbeeAPIModelUpdateStockApiModel class"""
 
         # Initialize members of the class
@@ -69,8 +71,7 @@ class BillbeeInterfacesBillbeeAPIModelUpdateStockApiModel(object):
         self.autosubtract_reserved_amount = autosubtract_reserved_amount
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -86,23 +87,25 @@ class BillbeeInterfacesBillbeeAPIModelUpdateStockApiModel(object):
             return None
 
         # Extract variables from the dictionary
-        billbee_id = dictionary.get('BillbeeId')
-        sku = dictionary.get('Sku')
-        stock_id = dictionary.get('StockId')
-        reason = dictionary.get('Reason')
-        old_quantity = dictionary.get('OldQuantity')
-        new_quantity = dictionary.get('NewQuantity')
-        delta_quantity = dictionary.get('DeltaQuantity')
-        force_send_stock_to_shops = dictionary.get('ForceSendStockToShops')
-        autosubtract_reserved_amount = dictionary.get('AutosubtractReservedAmount')
+        billbee_id = dictionary.get("BillbeeId")
+        sku = dictionary.get("Sku")
+        stock_id = dictionary.get("StockId")
+        reason = dictionary.get("Reason")
+        old_quantity = dictionary.get("OldQuantity")
+        new_quantity = dictionary.get("NewQuantity")
+        delta_quantity = dictionary.get("DeltaQuantity")
+        force_send_stock_to_shops = dictionary.get("ForceSendStockToShops")
+        autosubtract_reserved_amount = dictionary.get("AutosubtractReservedAmount")
 
         # Return an object of this model
-        return cls(billbee_id,
-                   sku,
-                   stock_id,
-                   reason,
-                   old_quantity,
-                   new_quantity,
-                   delta_quantity,
-                   force_send_stock_to_shops,
-                   autosubtract_reserved_amount)
+        return cls(
+            billbee_id,
+            sku,
+            stock_id,
+            reason,
+            old_quantity,
+            new_quantity,
+            delta_quantity,
+            force_send_stock_to_shops,
+            autosubtract_reserved_amount,
+        )

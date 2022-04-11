@@ -56,9 +56,7 @@ class HttpClient(object):
         """
         raise NotImplementedError("Please Implement this method")
 
-    def get(self, query_url,
-            headers={},
-            query_parameters={}):
+    def get(self, query_url, headers={}, query_parameters={}):
         """Create a simple GET HttpRequest object for the given parameters
 
         Args:
@@ -71,16 +69,9 @@ class HttpClient(object):
             HttpRequest: The generated HttpRequest for the given paremeters.
 
         """
-        return HttpRequest(HttpMethodEnum.GET,
-                           query_url,
-                           headers,
-                           query_parameters,
-                           None,
-                           None)
+        return HttpRequest(HttpMethodEnum.GET, query_url, headers, query_parameters, None, None)
 
-    def head(self, query_url,
-             headers={},
-             query_parameters={}):
+    def head(self, query_url, headers={}, query_parameters={}):
         """Create a simple HEAD HttpRequest object for the given parameters
 
         Args:
@@ -93,18 +84,9 @@ class HttpClient(object):
             HttpRequest: The generated HttpRequest for the given paremeters.
 
         """
-        return HttpRequest(HttpMethodEnum.HEAD,
-                           query_url,
-                           headers,
-                           query_parameters,
-                           None,
-                           None)
+        return HttpRequest(HttpMethodEnum.HEAD, query_url, headers, query_parameters, None, None)
 
-    def post(self, query_url,
-             headers={},
-             query_parameters={},
-             parameters={},
-             files={}):
+    def post(self, query_url, headers={}, query_parameters={}, parameters={}, files={}):
         """Create a simple POST HttpRequest object for the given parameters
 
         Args:
@@ -120,18 +102,9 @@ class HttpClient(object):
             HttpRequest: The generated HttpRequest for the given paremeters.
 
         """
-        return HttpRequest(HttpMethodEnum.POST,
-                           query_url,
-                           headers,
-                           query_parameters,
-                           parameters,
-                           files)
+        return HttpRequest(HttpMethodEnum.POST, query_url, headers, query_parameters, parameters, files)
 
-    def put(self, query_url,
-            headers={},
-            query_parameters={},
-            parameters={},
-            files={}):
+    def put(self, query_url, headers={}, query_parameters={}, parameters={}, files={}):
         """Create a simple PUT HttpRequest object for the given parameters
 
         Args:
@@ -147,18 +120,9 @@ class HttpClient(object):
             HttpRequest: The generated HttpRequest for the given paremeters.
 
         """
-        return HttpRequest(HttpMethodEnum.PUT,
-                           query_url,
-                           headers,
-                           query_parameters,
-                           parameters,
-                           files)
+        return HttpRequest(HttpMethodEnum.PUT, query_url, headers, query_parameters, parameters, files)
 
-    def patch(self, query_url,
-              headers={},
-              query_parameters={},
-              parameters={},
-              files={}):
+    def patch(self, query_url, headers={}, query_parameters={}, parameters={}, files={}):
         """Create a simple PATCH HttpRequest object for the given parameters
 
         Args:
@@ -174,18 +138,9 @@ class HttpClient(object):
             HttpRequest: The generated HttpRequest for the given paremeters.
 
         """
-        return HttpRequest(HttpMethodEnum.PATCH,
-                           query_url,
-                           headers,
-                           query_parameters,
-                           parameters,
-                           files)
+        return HttpRequest(HttpMethodEnum.PATCH, query_url, headers, query_parameters, parameters, files)
 
-    def delete(self, query_url,
-               headers={},
-               query_parameters={},
-               parameters={},
-               files={}):
+    def delete(self, query_url, headers={}, query_parameters={}, parameters={}, files={}):
         """Create a simple DELETE HttpRequest object for the given parameters
 
         Args:
@@ -201,9 +156,4 @@ class HttpClient(object):
             HttpRequest: The generated HttpRequest for the given paremeters.
 
         """
-        return HttpRequest(HttpMethodEnum.DELETE,
-                           query_url,
-                           headers,
-                           query_parameters,
-                           parameters,
-                           files)
+        return HttpRequest(HttpMethodEnum.DELETE, query_url, headers, query_parameters, parameters, files)

@@ -10,17 +10,39 @@ from billbeeapi.api_helper import APIHelper
 from billbeeapi.configuration import Server
 from billbeeapi.controllers.base_controller import BaseController
 from billbeeapi.http.auth.basic_auth import BasicAuth
-from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_result_billbee_interfaces_billbee_api_model_update_stock_response_data import RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelUpdateStockResponseData
-from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_result_billbee_interfaces_billbee_api_model_get_reserved_amount_response_data import RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelGetReservedAmountResponseData
-from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_result_billbee_interfaces_billbee_api_model_update_stock_code_response_data import RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelUpdateStockCodeResponseData
-from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_result_billbee_interfaces_billbee_api_model_article_api_model import RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelArticleApiModel
-from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_paged_result_system_collections_generic_list_billbee_interfaces_billbee_api_model_article_api_model import RechnungsdruckWebAppControllersApiApiPagedResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelArticleApiModel
-from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_paged_result_system_collections_generic_list_billbee_interfaces_billbee_api_model_article_api_custom_field_definition_model import RechnungsdruckWebAppControllersApiApiPagedResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelArticleApiCustomFieldDefinitionModel
-from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_result_billbee_interfaces_billbee_api_model_article_api_custom_field_definition_model import RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelArticleApiCustomFieldDefinitionModel
-from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_result_system_collections_generic_list_billbee_interfaces_billbee_api_model_article_image_relation_api_model import RechnungsdruckWebAppControllersApiApiResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelArticleImageRelationApiModel
-from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_result_billbee_interfaces_billbee_api_model_article_image_relation_api_model import RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelArticleImageRelationApiModel
-from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_result_billbee_interfaces_billbee_api_model_deleted_images_model import RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelDeletedImagesModel
-from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_result_rechnungsdruck_web_app_controllers_api_search_controller_search_results_model import RechnungsdruckWebAppControllersApiApiResultRechnungsdruckWebAppControllersApiSearchControllerSearchResultsModel
+from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_result_billbee_interfaces_billbee_api_model_update_stock_response_data import (
+    RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelUpdateStockResponseData,
+)
+from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_result_billbee_interfaces_billbee_api_model_get_reserved_amount_response_data import (
+    RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelGetReservedAmountResponseData,
+)
+from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_result_billbee_interfaces_billbee_api_model_update_stock_code_response_data import (
+    RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelUpdateStockCodeResponseData,
+)
+from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_result_billbee_interfaces_billbee_api_model_article_api_model import (
+    RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelArticleApiModel,
+)
+from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_paged_result_system_collections_generic_list_billbee_interfaces_billbee_api_model_article_api_model import (
+    RechnungsdruckWebAppControllersApiApiPagedResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelArticleApiModel,
+)
+from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_paged_result_system_collections_generic_list_billbee_interfaces_billbee_api_model_article_api_custom_field_definition_model import (
+    RechnungsdruckWebAppControllersApiApiPagedResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelArticleApiCustomFieldDefinitionModel,
+)
+from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_result_billbee_interfaces_billbee_api_model_article_api_custom_field_definition_model import (
+    RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelArticleApiCustomFieldDefinitionModel,
+)
+from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_result_system_collections_generic_list_billbee_interfaces_billbee_api_model_article_image_relation_api_model import (
+    RechnungsdruckWebAppControllersApiApiResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelArticleImageRelationApiModel,
+)
+from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_result_billbee_interfaces_billbee_api_model_article_image_relation_api_model import (
+    RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelArticleImageRelationApiModel,
+)
+from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_result_billbee_interfaces_billbee_api_model_deleted_images_model import (
+    RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelDeletedImagesModel,
+)
+from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_result_rechnungsdruck_web_app_controllers_api_search_controller_search_results_model import (
+    RechnungsdruckWebAppControllersApiApiResultRechnungsdruckWebAppControllersApiSearchControllerSearchResultsModel,
+)
 
 
 class ProductsController(BaseController):
@@ -30,8 +52,7 @@ class ProductsController(BaseController):
     def __init__(self, config, call_back=None):
         super(ProductsController, self).__init__(config, call_back)
 
-    def article_update_stock(self,
-                             model):
+    def article_update_stock(self, model):
         """Does a POST request to /api/v1/products/updatestock.
 
         The article is specified by sku. You have to send the absolute value
@@ -54,31 +75,30 @@ class ProductsController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/products/updatestock'
+        _url_path = "/api/v1/products/updatestock"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json',
-            'content-type': 'application/json; charset=utf-8'
-        }
+        _headers = {"accept": "application/json", "content-type": "application/json; charset=utf-8"}
 
         # Prepare and execute request
-        _request = self.config.http_client.post(_query_url, headers=_headers, parameters=APIHelper.json_serialize(model))
+        _request = self.config.http_client.post(
+            _query_url, headers=_headers, parameters=APIHelper.json_serialize(model)
+        )
         BasicAuth.apply(self.config, _request)
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelUpdateStockResponseData.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelUpdateStockResponseData.from_dictionary,
+        )
 
         return decoded
 
-    def article_get_reserved_amount(self,
-                                    id,
-                                    lookup_by=None,
-                                    stock_id=None):
+    def article_get_reserved_amount(self, id, lookup_by=None, stock_id=None):
         """Does a GET request to /api/v1/products/reservedamount.
 
         Queries the reserved amount for a single article by id or by sku
@@ -104,24 +124,15 @@ class ProductsController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/products/reservedamount'
+        _url_path = "/api/v1/products/reservedamount"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
-        _query_parameters = {
-            'id': id,
-            'lookupBy': lookup_by,
-            'stockId': stock_id
-        }
-        _query_builder = APIHelper.append_url_with_query_parameters(
-            _query_builder,
-            _query_parameters
-        )
+        _query_parameters = {"id": id, "lookupBy": lookup_by, "stockId": stock_id}
+        _query_builder = APIHelper.append_url_with_query_parameters(_query_builder, _query_parameters)
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json'
-        }
+        _headers = {"accept": "application/json"}
 
         # Prepare and execute request
         _request = self.config.http_client.get(_query_url, headers=_headers)
@@ -129,12 +140,14 @@ class ProductsController(BaseController):
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelGetReservedAmountResponseData.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelGetReservedAmountResponseData.from_dictionary,
+        )
 
         return decoded
 
-    def article_update_stock_multiple(self,
-                                      models):
+    def article_update_stock_multiple(self, models):
         """Does a POST request to /api/v1/products/updatestockmultiple.
 
         Update the stock qty for multiple articles at once
@@ -159,29 +172,30 @@ class ProductsController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/products/updatestockmultiple'
+        _url_path = "/api/v1/products/updatestockmultiple"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json',
-            'content-type': 'application/json; charset=utf-8'
-        }
+        _headers = {"accept": "application/json", "content-type": "application/json; charset=utf-8"}
 
         # Prepare and execute request
-        _request = self.config.http_client.post(_query_url, headers=_headers, parameters=APIHelper.json_serialize(models))
+        _request = self.config.http_client.post(
+            _query_url, headers=_headers, parameters=APIHelper.json_serialize(models)
+        )
         BasicAuth.apply(self.config, _request)
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelUpdateStockResponseData.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelUpdateStockResponseData.from_dictionary,
+        )
 
         return decoded
 
-    def article_update_stock_code(self,
-                                  model):
+    def article_update_stock_code(self, model):
         """Does a POST request to /api/v1/products/updatestockcode.
 
         Update the stock code of an article
@@ -204,30 +218,30 @@ class ProductsController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/products/updatestockcode'
+        _url_path = "/api/v1/products/updatestockcode"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json',
-            'content-type': 'application/json; charset=utf-8'
-        }
+        _headers = {"accept": "application/json", "content-type": "application/json; charset=utf-8"}
 
         # Prepare and execute request
-        _request = self.config.http_client.post(_query_url, headers=_headers, parameters=APIHelper.json_serialize(model))
+        _request = self.config.http_client.post(
+            _query_url, headers=_headers, parameters=APIHelper.json_serialize(model)
+        )
         BasicAuth.apply(self.config, _request)
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelUpdateStockCodeResponseData.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelUpdateStockCodeResponseData.from_dictionary,
+        )
 
         return decoded
 
-    def article_get_article(self,
-                            id,
-                            lookup_by=None):
+    def article_get_article(self, id, lookup_by=None):
         """Does a GET request to /api/v1/products/{id}.
 
         Queries a single article by id or by sku
@@ -250,25 +264,16 @@ class ProductsController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/products/{id}'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'id': {'value': id, 'encode': True}
-        })
+        _url_path = "/api/v1/products/{id}"
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {"id": {"value": id, "encode": True}})
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
-        _query_parameters = {
-            'lookupBy': lookup_by
-        }
-        _query_builder = APIHelper.append_url_with_query_parameters(
-            _query_builder,
-            _query_parameters
-        )
+        _query_parameters = {"lookupBy": lookup_by}
+        _query_builder = APIHelper.append_url_with_query_parameters(_query_builder, _query_parameters)
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json'
-        }
+        _headers = {"accept": "application/json"}
 
         # Prepare and execute request
         _request = self.config.http_client.get(_query_url, headers=_headers)
@@ -276,12 +281,14 @@ class ProductsController(BaseController):
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelArticleApiModel.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelArticleApiModel.from_dictionary,
+        )
 
         return decoded
 
-    def article_delete_article(self,
-                               id):
+    def article_delete_article(self, id):
         """Does a DELETE request to /api/v1/products/{id}.
 
         Deletes a product
@@ -301,10 +308,8 @@ class ProductsController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/products/{id}'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'id': {'value': id, 'encode': True}
-        })
+        _url_path = "/api/v1/products/{id}"
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {"id": {"value": id, "encode": True}})
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
@@ -319,9 +324,7 @@ class ProductsController(BaseController):
 
         return decoded
 
-    def article_patch_article(self,
-                              id,
-                              model):
+    def article_patch_article(self, id, model):
         """Does a PATCH request to /api/v1/products/{id}.
 
         Updates one or more fields of a product
@@ -342,21 +345,19 @@ class ProductsController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/products/{id}'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'id': {'value': id, 'encode': True}
-        })
+        _url_path = "/api/v1/products/{id}"
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {"id": {"value": id, "encode": True}})
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'content-type': 'application/json; charset=utf-8'
-        }
+        _headers = {"content-type": "application/json; charset=utf-8"}
 
         # Prepare and execute request
-        _request = self.config.http_client.patch(_query_url, headers=_headers, parameters=APIHelper.json_serialize(model))
+        _request = self.config.http_client.patch(
+            _query_url, headers=_headers, parameters=APIHelper.json_serialize(model)
+        )
         BasicAuth.apply(self.config, _request)
         _response = self.execute_request(_request)
         self.validate_response(_response)
@@ -365,10 +366,7 @@ class ProductsController(BaseController):
 
         return decoded
 
-    def article_get_list(self,
-                         page=None,
-                         page_size=None,
-                         min_created_at=None):
+    def article_get_list(self, page=None, page_size=None, min_created_at=None):
         """Does a GET request to /api/v1/products.
 
         Get a list of all products
@@ -394,24 +392,19 @@ class ProductsController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/products'
+        _url_path = "/api/v1/products"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_parameters = {
-            'page': page,
-            'pageSize': page_size,
-            'minCreatedAt': APIHelper.when_defined(APIHelper.RFC3339DateTime, min_created_at)
+            "page": page,
+            "pageSize": page_size,
+            "minCreatedAt": APIHelper.when_defined(APIHelper.RFC3339DateTime, min_created_at),
         }
-        _query_builder = APIHelper.append_url_with_query_parameters(
-            _query_builder,
-            _query_parameters
-        )
+        _query_builder = APIHelper.append_url_with_query_parameters(_query_builder, _query_parameters)
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json'
-        }
+        _headers = {"accept": "application/json"}
 
         # Prepare and execute request
         _request = self.config.http_client.get(_query_url, headers=_headers)
@@ -419,12 +412,14 @@ class ProductsController(BaseController):
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiPagedResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelArticleApiModel.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiPagedResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelArticleApiModel.from_dictionary,
+        )
 
         return decoded
 
-    def article_create_article(self,
-                               model):
+    def article_create_article(self, model):
         """Does a POST request to /api/v1/products.
 
         Creates a new product
@@ -445,18 +440,18 @@ class ProductsController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/products'
+        _url_path = "/api/v1/products"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'content-type': 'application/json; charset=utf-8'
-        }
+        _headers = {"content-type": "application/json; charset=utf-8"}
 
         # Prepare and execute request
-        _request = self.config.http_client.post(_query_url, headers=_headers, parameters=APIHelper.json_serialize(model))
+        _request = self.config.http_client.post(
+            _query_url, headers=_headers, parameters=APIHelper.json_serialize(model)
+        )
         BasicAuth.apply(self.config, _request)
         _response = self.execute_request(_request)
         self.validate_response(_response)
@@ -465,9 +460,7 @@ class ProductsController(BaseController):
 
         return decoded
 
-    def article_get_custom_fields(self,
-                                  page=None,
-                                  page_size=None):
+    def article_get_custom_fields(self, page=None, page_size=None):
         """Does a GET request to /api/v1/products/custom-fields.
 
         Queries a list of all custom fields
@@ -490,23 +483,15 @@ class ProductsController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/products/custom-fields'
+        _url_path = "/api/v1/products/custom-fields"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
-        _query_parameters = {
-            'page': page,
-            'pageSize': page_size
-        }
-        _query_builder = APIHelper.append_url_with_query_parameters(
-            _query_builder,
-            _query_parameters
-        )
+        _query_parameters = {"page": page, "pageSize": page_size}
+        _query_builder = APIHelper.append_url_with_query_parameters(_query_builder, _query_parameters)
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json'
-        }
+        _headers = {"accept": "application/json"}
 
         # Prepare and execute request
         _request = self.config.http_client.get(_query_url, headers=_headers)
@@ -514,12 +499,14 @@ class ProductsController(BaseController):
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiPagedResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelArticleApiCustomFieldDefinitionModel.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiPagedResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelArticleApiCustomFieldDefinitionModel.from_dictionary,
+        )
 
         return decoded
 
-    def article_get_custom_field(self,
-                                 id):
+    def article_get_custom_field(self, id):
         """Does a GET request to /api/v1/products/custom-fields/{id}.
 
         Queries a single custom field
@@ -541,18 +528,14 @@ class ProductsController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/products/custom-fields/{id}'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'id': {'value': id, 'encode': True}
-        })
+        _url_path = "/api/v1/products/custom-fields/{id}"
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {"id": {"value": id, "encode": True}})
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json'
-        }
+        _headers = {"accept": "application/json"}
 
         # Prepare and execute request
         _request = self.config.http_client.get(_query_url, headers=_headers)
@@ -560,7 +543,10 @@ class ProductsController(BaseController):
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelArticleApiCustomFieldDefinitionModel.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelArticleApiCustomFieldDefinitionModel.from_dictionary,
+        )
 
         return decoded
 
@@ -581,7 +567,7 @@ class ProductsController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/products/PatchableFields'
+        _url_path = "/api/v1/products/PatchableFields"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
@@ -613,7 +599,7 @@ class ProductsController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/products/category'
+        _url_path = "/api/v1/products/category"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
@@ -628,8 +614,7 @@ class ProductsController(BaseController):
 
         return decoded
 
-    def article_get_images(self,
-                           product_id):
+    def article_get_images(self, product_id):
         """Does a GET request to /api/v1/products/{productId}/images.
 
         Returns a list of all images of the product
@@ -651,18 +636,16 @@ class ProductsController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/products/{productId}/images'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'productId': {'value': product_id, 'encode': True}
-        })
+        _url_path = "/api/v1/products/{productId}/images"
+        _url_path = APIHelper.append_url_with_template_parameters(
+            _url_path, {"productId": {"value": product_id, "encode": True}}
+        )
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json'
-        }
+        _headers = {"accept": "application/json"}
 
         # Prepare and execute request
         _request = self.config.http_client.get(_query_url, headers=_headers)
@@ -670,14 +653,14 @@ class ProductsController(BaseController):
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelArticleImageRelationApiModel.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelArticleImageRelationApiModel.from_dictionary,
+        )
 
         return decoded
 
-    def article_put_images(self,
-                           product_id,
-                           models,
-                           replace=None):
+    def article_put_images(self, product_id, models, replace=None):
         """Does a PUT request to /api/v1/products/{productId}/images.
 
         Add multiple images to a product or replace the product images by the
@@ -706,40 +689,35 @@ class ProductsController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/products/{productId}/images'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'productId': {'value': product_id, 'encode': True}
-        })
+        _url_path = "/api/v1/products/{productId}/images"
+        _url_path = APIHelper.append_url_with_template_parameters(
+            _url_path, {"productId": {"value": product_id, "encode": True}}
+        )
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
-        _query_parameters = {
-            'replace': replace
-        }
-        _query_builder = APIHelper.append_url_with_query_parameters(
-            _query_builder,
-            _query_parameters
-        )
+        _query_parameters = {"replace": replace}
+        _query_builder = APIHelper.append_url_with_query_parameters(_query_builder, _query_parameters)
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json',
-            'content-type': 'application/json; charset=utf-8'
-        }
+        _headers = {"accept": "application/json", "content-type": "application/json; charset=utf-8"}
 
         # Prepare and execute request
-        _request = self.config.http_client.put(_query_url, headers=_headers, parameters=APIHelper.json_serialize(models))
+        _request = self.config.http_client.put(
+            _query_url, headers=_headers, parameters=APIHelper.json_serialize(models)
+        )
         BasicAuth.apply(self.config, _request)
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelArticleImageRelationApiModel.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelArticleImageRelationApiModel.from_dictionary,
+        )
 
         return decoded
 
-    def article_get_image_from_product(self,
-                                       product_id,
-                                       image_id):
+    def article_get_image_from_product(self, product_id, image_id):
         """Does a GET request to /api/v1/products/{productId}/images/{imageId}.
 
         Returns a single image by id
@@ -762,19 +740,17 @@ class ProductsController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/products/{productId}/images/{imageId}'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'productId': {'value': product_id, 'encode': True},
-            'imageId': {'value': image_id, 'encode': True}
-        })
+        _url_path = "/api/v1/products/{productId}/images/{imageId}"
+        _url_path = APIHelper.append_url_with_template_parameters(
+            _url_path,
+            {"productId": {"value": product_id, "encode": True}, "imageId": {"value": image_id, "encode": True}},
+        )
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json'
-        }
+        _headers = {"accept": "application/json"}
 
         # Prepare and execute request
         _request = self.config.http_client.get(_query_url, headers=_headers)
@@ -782,14 +758,14 @@ class ProductsController(BaseController):
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelArticleImageRelationApiModel.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelArticleImageRelationApiModel.from_dictionary,
+        )
 
         return decoded
 
-    def article_put_image(self,
-                          product_id,
-                          image_id,
-                          model):
+    def article_put_image(self, product_id, image_id, model):
         """Does a PUT request to /api/v1/products/{productId}/images/{imageId}.
 
         Add or update an existing image of a product
@@ -816,20 +792,17 @@ class ProductsController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/products/{productId}/images/{imageId}'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'productId': {'value': product_id, 'encode': True},
-            'imageId': {'value': image_id, 'encode': True}
-        })
+        _url_path = "/api/v1/products/{productId}/images/{imageId}"
+        _url_path = APIHelper.append_url_with_template_parameters(
+            _url_path,
+            {"productId": {"value": product_id, "encode": True}, "imageId": {"value": image_id, "encode": True}},
+        )
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json',
-            'content-type': 'application/json; charset=utf-8'
-        }
+        _headers = {"accept": "application/json", "content-type": "application/json; charset=utf-8"}
 
         # Prepare and execute request
         _request = self.config.http_client.put(_query_url, headers=_headers, parameters=APIHelper.json_serialize(model))
@@ -837,13 +810,14 @@ class ProductsController(BaseController):
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelArticleImageRelationApiModel.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelArticleImageRelationApiModel.from_dictionary,
+        )
 
         return decoded
 
-    def article_delete_image_from_product(self,
-                                          product_id,
-                                          image_id):
+    def article_delete_image_from_product(self, product_id, image_id):
         """Does a DELETE request to /api/v1/products/{productId}/images/{imageId}.
 
         Deletes a single image from a product
@@ -864,11 +838,11 @@ class ProductsController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/products/{productId}/images/{imageId}'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'productId': {'value': product_id, 'encode': True},
-            'imageId': {'value': image_id, 'encode': True}
-        })
+        _url_path = "/api/v1/products/{productId}/images/{imageId}"
+        _url_path = APIHelper.append_url_with_template_parameters(
+            _url_path,
+            {"productId": {"value": product_id, "encode": True}, "imageId": {"value": image_id, "encode": True}},
+        )
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
@@ -883,8 +857,7 @@ class ProductsController(BaseController):
 
         return decoded
 
-    def article_get_image(self,
-                          image_id):
+    def article_get_image(self, image_id):
         """Does a GET request to /api/v1/products/images/{imageId}.
 
         Returns a single image by id
@@ -906,18 +879,16 @@ class ProductsController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/products/images/{imageId}'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'imageId': {'value': image_id, 'encode': True}
-        })
+        _url_path = "/api/v1/products/images/{imageId}"
+        _url_path = APIHelper.append_url_with_template_parameters(
+            _url_path, {"imageId": {"value": image_id, "encode": True}}
+        )
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json'
-        }
+        _headers = {"accept": "application/json"}
 
         # Prepare and execute request
         _request = self.config.http_client.get(_query_url, headers=_headers)
@@ -925,12 +896,14 @@ class ProductsController(BaseController):
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelArticleImageRelationApiModel.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelArticleImageRelationApiModel.from_dictionary,
+        )
 
         return decoded
 
-    def article_delete_image(self,
-                             image_id):
+    def article_delete_image(self, image_id):
         """Does a DELETE request to /api/v1/products/images/{imageId}.
 
         Deletes a single image by id
@@ -950,10 +923,10 @@ class ProductsController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/products/images/{imageId}'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'imageId': {'value': image_id, 'encode': True}
-        })
+        _url_path = "/api/v1/products/images/{imageId}"
+        _url_path = APIHelper.append_url_with_template_parameters(
+            _url_path, {"imageId": {"value": image_id, "encode": True}}
+        )
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
@@ -968,8 +941,7 @@ class ProductsController(BaseController):
 
         return decoded
 
-    def article_delete_images(self,
-                              image_ids):
+    def article_delete_images(self, image_ids):
         """Does a POST request to /api/v1/products/images/delete.
 
         Delete multiple images by id
@@ -990,29 +962,30 @@ class ProductsController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/products/images/delete'
+        _url_path = "/api/v1/products/images/delete"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json',
-            'content-type': 'application/json; charset=utf-8'
-        }
+        _headers = {"accept": "application/json", "content-type": "application/json; charset=utf-8"}
 
         # Prepare and execute request
-        _request = self.config.http_client.post(_query_url, headers=_headers, parameters=APIHelper.json_serialize(image_ids))
+        _request = self.config.http_client.post(
+            _query_url, headers=_headers, parameters=APIHelper.json_serialize(image_ids)
+        )
         BasicAuth.apply(self.config, _request)
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelDeletedImagesModel.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelDeletedImagesModel.from_dictionary,
+        )
 
         return decoded
 
-    def search_search(self,
-                      model):
+    def search_search(self, model):
         """Does a POST request to /api/v1/search.
 
         Search for products, customers and orders.
@@ -1038,23 +1011,25 @@ class ProductsController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/search'
+        _url_path = "/api/v1/search"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json',
-            'content-type': 'application/json; charset=utf-8'
-        }
+        _headers = {"accept": "application/json", "content-type": "application/json; charset=utf-8"}
 
         # Prepare and execute request
-        _request = self.config.http_client.post(_query_url, headers=_headers, parameters=APIHelper.json_serialize(model))
+        _request = self.config.http_client.post(
+            _query_url, headers=_headers, parameters=APIHelper.json_serialize(model)
+        )
         BasicAuth.apply(self.config, _request)
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiResultRechnungsdruckWebAppControllersApiSearchControllerSearchResultsModel.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiResultRechnungsdruckWebAppControllersApiSearchControllerSearchResultsModel.from_dictionary,
+        )
 
         return decoded

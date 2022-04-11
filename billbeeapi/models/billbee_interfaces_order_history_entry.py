@@ -25,19 +25,14 @@ class BillbeeInterfacesOrderHistoryEntry(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "created": 'Created',
-        "event_type_name": 'EventTypeName',
-        "text": 'Text',
-        "employee_name": 'EmployeeName',
-        "type_id": 'TypeId'
+        "created": "Created",
+        "event_type_name": "EventTypeName",
+        "text": "Text",
+        "employee_name": "EmployeeName",
+        "type_id": "TypeId",
     }
 
-    def __init__(self,
-                 created=None,
-                 event_type_name=None,
-                 text=None,
-                 employee_name=None,
-                 type_id=None):
+    def __init__(self, created=None, event_type_name=None, text=None, employee_name=None, type_id=None):
         """Constructor for the BillbeeInterfacesOrderHistoryEntry class"""
 
         # Initialize members of the class
@@ -48,8 +43,7 @@ class BillbeeInterfacesOrderHistoryEntry(object):
         self.type_id = type_id
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -65,15 +59,15 @@ class BillbeeInterfacesOrderHistoryEntry(object):
             return None
 
         # Extract variables from the dictionary
-        created = APIHelper.RFC3339DateTime.from_value(dictionary.get("Created")).datetime if dictionary.get("Created") else None
-        event_type_name = dictionary.get('EventTypeName')
-        text = dictionary.get('Text')
-        employee_name = dictionary.get('EmployeeName')
-        type_id = dictionary.get('TypeId')
+        created = (
+            APIHelper.RFC3339DateTime.from_value(dictionary.get("Created")).datetime
+            if dictionary.get("Created")
+            else None
+        )
+        event_type_name = dictionary.get("EventTypeName")
+        text = dictionary.get("Text")
+        employee_name = dictionary.get("EmployeeName")
+        type_id = dictionary.get("TypeId")
 
         # Return an object of this model
-        return cls(created,
-                   event_type_name,
-                   text,
-                   employee_name,
-                   type_id)
+        return cls(created, event_type_name, text, employee_name, type_id)

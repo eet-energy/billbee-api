@@ -25,18 +25,9 @@ class RechnungsdruckWebAppControllersApiOrderApiControllerSendMessageModel(objec
     """
 
     # Create a mapping from Model property names to API property names
-    _names = {
-        "send_mode": 'SendMode',
-        "subject": 'Subject',
-        "body": 'Body',
-        "alternative_mail": 'AlternativeMail'
-    }
+    _names = {"send_mode": "SendMode", "subject": "Subject", "body": "Body", "alternative_mail": "AlternativeMail"}
 
-    def __init__(self,
-                 send_mode=None,
-                 subject=None,
-                 body=None,
-                 alternative_mail=None):
+    def __init__(self, send_mode=None, subject=None, body=None, alternative_mail=None):
         """Constructor for the RechnungsdruckWebAppControllersApiOrderApiControllerSendMessageModel class"""
 
         # Initialize members of the class
@@ -46,8 +37,7 @@ class RechnungsdruckWebAppControllersApiOrderApiControllerSendMessageModel(objec
         self.alternative_mail = alternative_mail
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -63,17 +53,14 @@ class RechnungsdruckWebAppControllersApiOrderApiControllerSendMessageModel(objec
             return None
 
         # Extract variables from the dictionary
-        send_mode = dictionary.get('SendMode')
+        send_mode = dictionary.get("SendMode")
         subject = None
-        if dictionary.get('Subject') is not None:
-            subject = [BillbeeInterfacesOrderMultiLanguageString.from_dictionary(x) for x in dictionary.get('Subject')]
+        if dictionary.get("Subject") is not None:
+            subject = [BillbeeInterfacesOrderMultiLanguageString.from_dictionary(x) for x in dictionary.get("Subject")]
         body = None
-        if dictionary.get('Body') is not None:
-            body = [BillbeeInterfacesOrderMultiLanguageString.from_dictionary(x) for x in dictionary.get('Body')]
-        alternative_mail = dictionary.get('AlternativeMail')
+        if dictionary.get("Body") is not None:
+            body = [BillbeeInterfacesOrderMultiLanguageString.from_dictionary(x) for x in dictionary.get("Body")]
+        alternative_mail = dictionary.get("AlternativeMail")
 
         # Return an object of this model
-        return cls(send_mode,
-                   subject,
-                   body,
-                   alternative_mail)
+        return cls(send_mode, subject, body, alternative_mail)

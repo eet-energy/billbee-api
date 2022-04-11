@@ -20,14 +20,9 @@ class BillbeeInterfacesBillbeeAPIModelDeletedImagesModel(object):
     """
 
     # Create a mapping from Model property names to API property names
-    _names = {
-        "deleted": 'Deleted',
-        "not_found": 'NotFound'
-    }
+    _names = {"deleted": "Deleted", "not_found": "NotFound"}
 
-    def __init__(self,
-                 deleted=None,
-                 not_found=None):
+    def __init__(self, deleted=None, not_found=None):
         """Constructor for the BillbeeInterfacesBillbeeAPIModelDeletedImagesModel class"""
 
         # Initialize members of the class
@@ -35,8 +30,7 @@ class BillbeeInterfacesBillbeeAPIModelDeletedImagesModel(object):
         self.not_found = not_found
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -52,9 +46,8 @@ class BillbeeInterfacesBillbeeAPIModelDeletedImagesModel(object):
             return None
 
         # Extract variables from the dictionary
-        deleted = dictionary.get('Deleted')
-        not_found = dictionary.get('NotFound')
+        deleted = dictionary.get("Deleted")
+        not_found = dictionary.get("NotFound")
 
         # Return an object of this model
-        return cls(deleted,
-                   not_found)
+        return cls(deleted, not_found)

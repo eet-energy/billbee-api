@@ -21,16 +21,9 @@ class BillbeeInterfacesShippingShipmentDataDimensions(object):
     """
 
     # Create a mapping from Model property names to API property names
-    _names = {
-        "length": 'length',
-        "width": 'width',
-        "height": 'height'
-    }
+    _names = {"length": "length", "width": "width", "height": "height"}
 
-    def __init__(self,
-                 length=None,
-                 width=None,
-                 height=None):
+    def __init__(self, length=None, width=None, height=None):
         """Constructor for the BillbeeInterfacesShippingShipmentDataDimensions class"""
 
         # Initialize members of the class
@@ -39,8 +32,7 @@ class BillbeeInterfacesShippingShipmentDataDimensions(object):
         self.height = height
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -56,11 +48,9 @@ class BillbeeInterfacesShippingShipmentDataDimensions(object):
             return None
 
         # Extract variables from the dictionary
-        length = dictionary.get('length')
-        width = dictionary.get('width')
-        height = dictionary.get('height')
+        length = dictionary.get("length")
+        width = dictionary.get("width")
+        height = dictionary.get("height")
 
         # Return an object of this model
-        return cls(length,
-                   width,
-                   height)
+        return cls(length, width, height)

@@ -12,17 +12,18 @@ from billbeeapi.http.requests_client import RequestsClient
 
 class Environment(Enum):
     """An enum for SDK environments"""
+
     PRODUCTION = 0
 
 
 class Server(Enum):
     """An enum for API servers"""
+
     DEFAULT = 0
 
 
 class Configuration(object):
-    """A class used for configuring the SDK by a user.
-    """
+    """A class used for configuring the SDK by a user."""
 
     @property
     def http_client(self):
@@ -56,11 +57,16 @@ class Configuration(object):
     def api_key(self):
         return self._api_key
 
-    def __init__(self, timeout=60, max_retries=3, backoff_factor=0,
-                 environment=Environment.PRODUCTION,
-                 basic_auth_user_name='TODO: Replace',
-                 basic_auth_password='TODO: Replace',
-                 api_key='TODO: Replace'):
+    def __init__(
+        self,
+        timeout=60,
+        max_retries=3,
+        backoff_factor=0,
+        environment=Environment.PRODUCTION,
+        basic_auth_user_name="TODO: Replace",
+        basic_auth_password="TODO: Replace",
+        api_key="TODO: Replace",
+    ):
         # The value to use for connection timeout
         self._timeout = timeout
 
@@ -81,16 +87,22 @@ class Configuration(object):
         # The password to use with basic authentication
         self._basic_auth_password = basic_auth_password
 
-	# The api key to send as HTTP header X-Billbee-Api-Key to identifying the application/developer
+        # The api key to send as HTTP header X-Billbee-Api-Key to identifying the application/developer
         self._api_key = api_key
 
         # The Http Client to use for making requests.
         self._http_client = self.create_http_client()
 
-    def clone_with(self, timeout=None, max_retries=None, backoff_factor=None,
-                   environment=None, basic_auth_user_name=None,
-                   basic_auth_password=None,
-                   api_key=None):
+    def clone_with(
+        self,
+        timeout=None,
+        max_retries=None,
+        backoff_factor=None,
+        environment=None,
+        basic_auth_user_name=None,
+        basic_auth_password=None,
+        api_key=None,
+    ):
         timeout = timeout or self.timeout
         max_retries = max_retries or self.max_retries
         backoff_factor = backoff_factor or self.backoff_factor
@@ -99,25 +111,21 @@ class Configuration(object):
         basic_auth_password = basic_auth_password or self.basic_auth_password
         api_key = api_key or self.api_key
 
-        return Configuration(timeout=timeout, max_retries=max_retries,
-                             backoff_factor=backoff_factor,
-                             environment=environment,
-                             basic_auth_user_name=basic_auth_user_name,
-                             basic_auth_password=basic_auth_password,
-                             api_key=api_key
-                             )
+        return Configuration(
+            timeout=timeout,
+            max_retries=max_retries,
+            backoff_factor=backoff_factor,
+            environment=environment,
+            basic_auth_user_name=basic_auth_user_name,
+            basic_auth_password=basic_auth_password,
+            api_key=api_key,
+        )
 
     def create_http_client(self):
-        return RequestsClient(timeout=self.timeout,
-                              max_retries=self.max_retries,
-                              backoff_factor=self.backoff_factor)
+        return RequestsClient(timeout=self.timeout, max_retries=self.max_retries, backoff_factor=self.backoff_factor)
 
     # All the environments the SDK can run in
-    environments = {
-        Environment.PRODUCTION: {
-            Server.DEFAULT: 'https://app.billbee.io'
-        }
-    }
+    environments = {Environment.PRODUCTION: {Server.DEFAULT: "https://app.billbee.io"}}
 
     def get_base_uri(self, server=Server.DEFAULT):
         """Generates the appropriate base URI for the environment and the

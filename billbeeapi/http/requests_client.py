@@ -25,12 +25,7 @@ class RequestsClient(HttpClient):
 
     """
 
-    def __init__(self,
-                 timeout=60,
-                 cache=False,
-                 max_retries=None,
-                 backoff_factor=None,
-                 verify=True):
+    def __init__(self, timeout=60, cache=False, max_retries=None, backoff_factor=None, verify=True):
         """The constructor.
 
         Args:
@@ -41,8 +36,8 @@ class RequestsClient(HttpClient):
         self.session = session()
 
         retries = Retry(total=max_retries, backoff_factor=backoff_factor)
-        self.session.mount('http://', HTTPAdapter(max_retries=retries))
-        self.session.mount('https://', HTTPAdapter(max_retries=retries))
+        self.session.mount("http://", HTTPAdapter(max_retries=retries))
+        self.session.mount("https://", HTTPAdapter(max_retries=retries))
 
         if cache:
             self.session = CacheControl(self.session)
@@ -66,7 +61,7 @@ class RequestsClient(HttpClient):
             params=request.query_parameters,
             data=request.parameters,
             files=request.files,
-            timeout=self.timeout
+            timeout=self.timeout,
         )
 
         return self.convert_response(response, False, request)
@@ -89,7 +84,7 @@ class RequestsClient(HttpClient):
             params=request.query_parameters,
             data=request.parameters,
             files=request.files,
-            timeout=self.timeout
+            timeout=self.timeout,
         )
 
         return self.convert_response(response, True, request)
@@ -107,18 +102,6 @@ class RequestsClient(HttpClient):
 
         """
         if binary:
-            return HttpResponse(
-                response.status_code,
-                response.reason,
-                response.headers,
-                response.content,
-                http_request
-            )
+            return HttpResponse(response.status_code, response.reason, response.headers, response.content, http_request)
         else:
-            return HttpResponse(
-                response.status_code,
-                response.reason,
-                response.headers,
-                response.text,
-                http_request
-            )
+            return HttpResponse(response.status_code, response.reason, response.headers, response.text, http_request)

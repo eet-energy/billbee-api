@@ -23,12 +23,7 @@ class HttpResponse(object):
 
     """
 
-    def __init__(self,
-                 status_code,
-                 reason_phrase,
-                 headers,
-                 text,
-                 request):
+    def __init__(self, status_code, reason_phrase, headers, text, request):
         """Constructor for the HttpResponse class
 
         Args:

@@ -19,13 +19,7 @@ class EventsController(BaseController):
     def __init__(self, config, call_back=None):
         super(EventsController, self).__init__(config, call_back)
 
-    def event_api_get_list(self,
-                           min_date=None,
-                           max_date=None,
-                           page=None,
-                           page_size=None,
-                           type_id=None,
-                           order_id=None):
+    def event_api_get_list(self, min_date=None, max_date=None, page=None, page_size=None, type_id=None, order_id=None):
         """Does a GET request to /api/v1/events.
 
         Get a list of all events optionally filtered by date. This request is
@@ -54,21 +48,18 @@ class EventsController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/events'
+        _url_path = "/api/v1/events"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_parameters = {
-            'minDate': APIHelper.when_defined(APIHelper.RFC3339DateTime, min_date),
-            'maxDate': APIHelper.when_defined(APIHelper.RFC3339DateTime, max_date),
-            'page': page,
-            'pageSize': page_size,
-            'typeId': type_id,
-            'orderId': order_id
+            "minDate": APIHelper.when_defined(APIHelper.RFC3339DateTime, min_date),
+            "maxDate": APIHelper.when_defined(APIHelper.RFC3339DateTime, max_date),
+            "page": page,
+            "pageSize": page_size,
+            "typeId": type_id,
+            "orderId": order_id,
         }
-        _query_builder = APIHelper.append_url_with_query_parameters(
-            _query_builder,
-            _query_parameters
-        )
+        _query_builder = APIHelper.append_url_with_query_parameters(_query_builder, _query_parameters)
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare and execute request

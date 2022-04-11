@@ -36,43 +36,45 @@ class BillbeeInterfacesBillbeeAPIModelShipmentAddressApiModel(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "company": 'Company',
-        "first_name": 'FirstName',
-        "last_name": 'LastName',
-        "name_2": 'Name2',
-        "street": 'Street',
-        "housenumber": 'Housenumber',
-        "zip": 'Zip',
-        "city": 'City',
-        "country_code": 'CountryCode',
-        "country_code_iso_3": 'CountryCodeISO3',
-        "email": 'Email',
-        "telephone": 'Telephone',
-        "address_addition": 'AddressAddition',
-        "is_export_country": 'IsExportCountry',
-        "state": 'State',
-        "full_name": 'FullName',
-        "full_street": 'FullStreet'
+        "company": "Company",
+        "first_name": "FirstName",
+        "last_name": "LastName",
+        "name_2": "Name2",
+        "street": "Street",
+        "housenumber": "Housenumber",
+        "zip": "Zip",
+        "city": "City",
+        "country_code": "CountryCode",
+        "country_code_iso_3": "CountryCodeISO3",
+        "email": "Email",
+        "telephone": "Telephone",
+        "address_addition": "AddressAddition",
+        "is_export_country": "IsExportCountry",
+        "state": "State",
+        "full_name": "FullName",
+        "full_street": "FullStreet",
     }
 
-    def __init__(self,
-                 company=None,
-                 first_name=None,
-                 last_name=None,
-                 name_2=None,
-                 street=None,
-                 housenumber=None,
-                 zip=None,
-                 city=None,
-                 country_code=None,
-                 country_code_iso_3=None,
-                 email=None,
-                 telephone=None,
-                 address_addition=None,
-                 is_export_country=None,
-                 state=None,
-                 full_name=None,
-                 full_street=None):
+    def __init__(
+        self,
+        company=None,
+        first_name=None,
+        last_name=None,
+        name_2=None,
+        street=None,
+        housenumber=None,
+        zip=None,
+        city=None,
+        country_code=None,
+        country_code_iso_3=None,
+        email=None,
+        telephone=None,
+        address_addition=None,
+        is_export_country=None,
+        state=None,
+        full_name=None,
+        full_street=None,
+    ):
         """Constructor for the BillbeeInterfacesBillbeeAPIModelShipmentAddressApiModel class"""
 
         # Initialize members of the class
@@ -95,8 +97,7 @@ class BillbeeInterfacesBillbeeAPIModelShipmentAddressApiModel(object):
         self.full_street = full_street
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -112,39 +113,41 @@ class BillbeeInterfacesBillbeeAPIModelShipmentAddressApiModel(object):
             return None
 
         # Extract variables from the dictionary
-        company = dictionary.get('Company')
-        first_name = dictionary.get('FirstName')
-        last_name = dictionary.get('LastName')
-        name_2 = dictionary.get('Name2')
-        street = dictionary.get('Street')
-        housenumber = dictionary.get('Housenumber')
-        zip = dictionary.get('Zip')
-        city = dictionary.get('City')
-        country_code = dictionary.get('CountryCode')
-        country_code_iso_3 = dictionary.get('CountryCodeISO3')
-        email = dictionary.get('Email')
-        telephone = dictionary.get('Telephone')
-        address_addition = dictionary.get('AddressAddition')
-        is_export_country = dictionary.get('IsExportCountry')
-        state = dictionary.get('State')
-        full_name = dictionary.get('FullName')
-        full_street = dictionary.get('FullStreet')
+        company = dictionary.get("Company")
+        first_name = dictionary.get("FirstName")
+        last_name = dictionary.get("LastName")
+        name_2 = dictionary.get("Name2")
+        street = dictionary.get("Street")
+        housenumber = dictionary.get("Housenumber")
+        zip = dictionary.get("Zip")
+        city = dictionary.get("City")
+        country_code = dictionary.get("CountryCode")
+        country_code_iso_3 = dictionary.get("CountryCodeISO3")
+        email = dictionary.get("Email")
+        telephone = dictionary.get("Telephone")
+        address_addition = dictionary.get("AddressAddition")
+        is_export_country = dictionary.get("IsExportCountry")
+        state = dictionary.get("State")
+        full_name = dictionary.get("FullName")
+        full_street = dictionary.get("FullStreet")
 
         # Return an object of this model
-        return cls(company,
-                   first_name,
-                   last_name,
-                   name_2,
-                   street,
-                   housenumber,
-                   zip,
-                   city,
-                   country_code,
-                   country_code_iso_3,
-                   email,
-                   telephone,
-                   address_addition,
-                   is_export_country,
-                   state,
-                   full_name,
-                   full_street)
+        return cls(
+            company,
+            first_name,
+            last_name,
+            name_2,
+            street,
+            housenumber,
+            zip,
+            city,
+            country_code,
+            country_code_iso_3,
+            email,
+            telephone,
+            address_addition,
+            is_export_country,
+            state,
+            full_name,
+            full_street,
+        )

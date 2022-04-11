@@ -20,14 +20,9 @@ class SystemCollectionsGenericKeyValuePairSystemInt32SystemString(object):
     """
 
     # Create a mapping from Model property names to API property names
-    _names = {
-        "key": 'key',
-        "value": 'value'
-    }
+    _names = {"key": "key", "value": "value"}
 
-    def __init__(self,
-                 key=None,
-                 value=None):
+    def __init__(self, key=None, value=None):
         """Constructor for the SystemCollectionsGenericKeyValuePairSystemInt32SystemString class"""
 
         # Initialize members of the class
@@ -35,8 +30,7 @@ class SystemCollectionsGenericKeyValuePairSystemInt32SystemString(object):
         self.value = value
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -52,9 +46,8 @@ class SystemCollectionsGenericKeyValuePairSystemInt32SystemString(object):
             return None
 
         # Extract variables from the dictionary
-        key = dictionary.get('key')
-        value = dictionary.get('value')
+        key = dictionary.get("key")
+        value = dictionary.get("value")
 
         # Return an object of this model
-        return cls(key,
-                   value)
+        return cls(key, value)

@@ -20,14 +20,9 @@ class BillbeeInterfacesBillbeeAPIModelArticleCategoryApiModel(object):
     """
 
     # Create a mapping from Model property names to API property names
-    _names = {
-        "name": 'Name',
-        "id": 'Id'
-    }
+    _names = {"name": "Name", "id": "Id"}
 
-    def __init__(self,
-                 name=None,
-                 id=None):
+    def __init__(self, name=None, id=None):
         """Constructor for the BillbeeInterfacesBillbeeAPIModelArticleCategoryApiModel class"""
 
         # Initialize members of the class
@@ -35,8 +30,7 @@ class BillbeeInterfacesBillbeeAPIModelArticleCategoryApiModel(object):
         self.id = id
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -52,9 +46,8 @@ class BillbeeInterfacesBillbeeAPIModelArticleCategoryApiModel(object):
             return None
 
         # Extract variables from the dictionary
-        name = dictionary.get('Name')
-        id = dictionary.get('Id')
+        name = dictionary.get("Name")
+        id = dictionary.get("Id")
 
         # Return an object of this model
-        return cls(name,
-                   id)
+        return cls(name, id)

@@ -10,9 +10,15 @@ from billbeeapi.api_helper import APIHelper
 from billbeeapi.configuration import Server
 from billbeeapi.controllers.base_controller import BaseController
 from billbeeapi.http.auth.basic_auth import BasicAuth
-from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_result_system_collections_generic_list_billbee_interfaces_billbee_api_models_layout_template import RechnungsdruckWebAppControllersApiApiResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelsLayoutTemplate
-from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_paged_result_system_collections_generic_list_billbee_interfaces_billbee_api_model_order import RechnungsdruckWebAppControllersApiApiPagedResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelOrder
-from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_result_billbee_interfaces_billbee_api_model_order import RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelOrder
+from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_result_system_collections_generic_list_billbee_interfaces_billbee_api_models_layout_template import (
+    RechnungsdruckWebAppControllersApiApiResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelsLayoutTemplate,
+)
+from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_paged_result_system_collections_generic_list_billbee_interfaces_billbee_api_model_order import (
+    RechnungsdruckWebAppControllersApiApiPagedResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelOrder,
+)
+from billbeeapi.models.rechnungsdruck_web_app_controllers_api_api_result_billbee_interfaces_billbee_api_model_order import (
+    RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelOrder,
+)
 from billbeeapi.exceptions.api_exception import APIException
 
 
@@ -42,15 +48,13 @@ class OrdersController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/layouts'
+        _url_path = "/api/v1/layouts"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json'
-        }
+        _headers = {"accept": "application/json"}
 
         # Prepare and execute request
         _request = self.config.http_client.get(_query_url, headers=_headers)
@@ -58,23 +62,28 @@ class OrdersController(BaseController):
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelsLayoutTemplate.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelsLayoutTemplate.from_dictionary,
+        )
 
         return decoded
 
-    def order_api_get_list(self,
-                           min_order_date=None,
-                           max_order_date=None,
-                           page=None,
-                           page_size=None,
-                           shop_id=None,
-                           order_state_id=None,
-                           tag=None,
-                           minimum_bill_bee_order_id=None,
-                           modified_at_min=None,
-                           modified_at_max=None,
-                           article_title_source=None,
-                           exclude_tags=None):
+    def order_api_get_list(
+        self,
+        min_order_date=None,
+        max_order_date=None,
+        page=None,
+        page_size=None,
+        shop_id=None,
+        order_state_id=None,
+        tag=None,
+        minimum_bill_bee_order_id=None,
+        modified_at_min=None,
+        modified_at_max=None,
+        article_title_source=None,
+        exclude_tags=None,
+    ):
         """Does a GET request to /api/v1/orders.
 
         Get a list of all orders optionally filtered by date
@@ -120,33 +129,28 @@ class OrdersController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/orders'
+        _url_path = "/api/v1/orders"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_parameters = {
-            'minOrderDate': APIHelper.when_defined(APIHelper.RFC3339DateTime, min_order_date),
-            'maxOrderDate': APIHelper.when_defined(APIHelper.RFC3339DateTime, max_order_date),
-            'page': page,
-            'pageSize': page_size,
-            'shopId': shop_id,
-            'orderStateId': order_state_id,
-            'tag': tag,
-            'minimumBillBeeOrderId': minimum_bill_bee_order_id,
-            'modifiedAtMin': APIHelper.when_defined(APIHelper.RFC3339DateTime, modified_at_min),
-            'modifiedAtMax': APIHelper.when_defined(APIHelper.RFC3339DateTime, modified_at_max),
-            'articleTitleSource': article_title_source,
-            'excludeTags': exclude_tags
+            "minOrderDate": APIHelper.when_defined(APIHelper.RFC3339DateTime, min_order_date),
+            "maxOrderDate": APIHelper.when_defined(APIHelper.RFC3339DateTime, max_order_date),
+            "page": page,
+            "pageSize": page_size,
+            "shopId": shop_id,
+            "orderStateId": order_state_id,
+            "tag": tag,
+            "minimumBillBeeOrderId": minimum_bill_bee_order_id,
+            "modifiedAtMin": APIHelper.when_defined(APIHelper.RFC3339DateTime, modified_at_min),
+            "modifiedAtMax": APIHelper.when_defined(APIHelper.RFC3339DateTime, modified_at_max),
+            "articleTitleSource": article_title_source,
+            "excludeTags": exclude_tags,
         }
-        _query_builder = APIHelper.append_url_with_query_parameters(
-            _query_builder,
-            _query_parameters
-        )
+        _query_builder = APIHelper.append_url_with_query_parameters(_query_builder, _query_parameters)
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json'
-        }
+        _headers = {"accept": "application/json"}
 
         # Prepare and execute request
         _request = self.config.http_client.get(_query_url, headers=_headers)
@@ -154,13 +158,14 @@ class OrdersController(BaseController):
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiPagedResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelOrder.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiPagedResultSystemCollectionsGenericListBillbeeInterfacesBillbeeAPIModelOrder.from_dictionary,
+        )
 
         return decoded
 
-    def order_api_post_new_order(self,
-                                 order_data,
-                                 shop_id=None):
+    def order_api_post_new_order(self, order_data, shop_id=None):
         """Does a POST request to /api/v1/orders.
 
         To create an order POST an JSON object to the orders endpoint with the
@@ -186,43 +191,38 @@ class OrdersController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/orders'
+        _url_path = "/api/v1/orders"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
-        _query_parameters = {
-            'shopId': shop_id
-        }
-        _query_builder = APIHelper.append_url_with_query_parameters(
-            _query_builder,
-            _query_parameters
-        )
+        _query_parameters = {"shopId": shop_id}
+        _query_builder = APIHelper.append_url_with_query_parameters(_query_builder, _query_parameters)
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json',
-            'content-type': 'application/json; charset=utf-8'
-        }
+        _headers = {"accept": "application/json", "content-type": "application/json; charset=utf-8"}
 
         # Prepare and execute request
-        _request = self.config.http_client.post(_query_url, headers=_headers, parameters=APIHelper.json_serialize(order_data))
+        _request = self.config.http_client.post(
+            _query_url, headers=_headers, parameters=APIHelper.json_serialize(order_data)
+        )
         BasicAuth.apply(self.config, _request)
         _response = self.execute_request(_request)
 
         # Endpoint and global error handling using HTTP status codes.
         if _response.status_code == 400:
-            raise APIException('Invalid data was received in the request', _response)
+            raise APIException("Invalid data was received in the request", _response)
         elif _response.status_code == 500:
-            raise APIException('An internal exception occured. Order was not created', _response)
+            raise APIException("An internal exception occured. Order was not created", _response)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelOrder.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelOrder.from_dictionary,
+        )
 
         return decoded
 
-    def order_api_tags_update(self,
-                              tag_data,
-                              id):
+    def order_api_tags_update(self, tag_data, id):
         """Does a PUT request to /api/v1/orders/{id}/tags.
 
         Updates/Sets the tags attached to an order
@@ -244,21 +244,19 @@ class OrdersController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/orders/{id}/tags'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'id': {'value': id, 'encode': True}
-        })
+        _url_path = "/api/v1/orders/{id}/tags"
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {"id": {"value": id, "encode": True}})
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'content-type': 'application/json; charset=utf-8'
-        }
+        _headers = {"content-type": "application/json; charset=utf-8"}
 
         # Prepare and execute request
-        _request = self.config.http_client.put(_query_url, headers=_headers, parameters=APIHelper.json_serialize(tag_data))
+        _request = self.config.http_client.put(
+            _query_url, headers=_headers, parameters=APIHelper.json_serialize(tag_data)
+        )
         BasicAuth.apply(self.config, _request)
         _response = self.execute_request(_request)
         self.validate_response(_response)
@@ -267,9 +265,7 @@ class OrdersController(BaseController):
 
         return decoded
 
-    def order_api_tags_create(self,
-                              tag_data,
-                              id):
+    def order_api_tags_create(self, tag_data, id):
         """Does a POST request to /api/v1/orders/{id}/tags.
 
         When a tag is already attached, it is ignored. Tags are not case
@@ -292,21 +288,19 @@ class OrdersController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/orders/{id}/tags'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'id': {'value': id, 'encode': True}
-        })
+        _url_path = "/api/v1/orders/{id}/tags"
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {"id": {"value": id, "encode": True}})
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'content-type': 'application/json; charset=utf-8'
-        }
+        _headers = {"content-type": "application/json; charset=utf-8"}
 
         # Prepare and execute request
-        _request = self.config.http_client.post(_query_url, headers=_headers, parameters=APIHelper.json_serialize(tag_data))
+        _request = self.config.http_client.post(
+            _query_url, headers=_headers, parameters=APIHelper.json_serialize(tag_data)
+        )
         BasicAuth.apply(self.config, _request)
         _response = self.execute_request(_request)
         self.validate_response(_response)
@@ -315,9 +309,7 @@ class OrdersController(BaseController):
 
         return decoded
 
-    def order_api_get(self,
-                      id,
-                      article_title_source=None):
+    def order_api_get(self, id, article_title_source=None):
         """Does a GET request to /api/v1/orders/{id}.
 
         Get a single order by its internal billbee id. This request is
@@ -342,25 +334,16 @@ class OrdersController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/orders/{id}'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'id': {'value': id, 'encode': True}
-        })
+        _url_path = "/api/v1/orders/{id}"
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {"id": {"value": id, "encode": True}})
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
-        _query_parameters = {
-            'articleTitleSource': article_title_source
-        }
-        _query_builder = APIHelper.append_url_with_query_parameters(
-            _query_builder,
-            _query_parameters
-        )
+        _query_parameters = {"articleTitleSource": article_title_source}
+        _query_builder = APIHelper.append_url_with_query_parameters(_query_builder, _query_parameters)
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json'
-        }
+        _headers = {"accept": "application/json"}
 
         # Prepare and execute request
         _request = self.config.http_client.get(_query_url, headers=_headers)
@@ -368,13 +351,14 @@ class OrdersController(BaseController):
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelOrder.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelOrder.from_dictionary,
+        )
 
         return decoded
 
-    def order_api_patch_order(self,
-                              id,
-                              model):
+    def order_api_patch_order(self, id, model):
         """Does a PATCH request to /api/v1/orders/{id}.
 
         Updates one or more fields of an order
@@ -396,32 +380,31 @@ class OrdersController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/orders/{id}'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'id': {'value': id, 'encode': True}
-        })
+        _url_path = "/api/v1/orders/{id}"
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {"id": {"value": id, "encode": True}})
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json',
-            'content-type': 'application/json; charset=utf-8'
-        }
+        _headers = {"accept": "application/json", "content-type": "application/json; charset=utf-8"}
 
         # Prepare and execute request
-        _request = self.config.http_client.patch(_query_url, headers=_headers, parameters=APIHelper.json_serialize(model))
+        _request = self.config.http_client.patch(
+            _query_url, headers=_headers, parameters=APIHelper.json_serialize(model)
+        )
         BasicAuth.apply(self.config, _request)
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelOrder.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelOrder.from_dictionary,
+        )
 
         return decoded
 
-    def order_api_get_by_ext_ref(self,
-                                 ext_ref):
+    def order_api_get_by_ext_ref(self, ext_ref):
         """Does a GET request to /api/v1/orders/findbyextref/{extRef}.
 
         Get a single order by its external order number
@@ -442,18 +425,16 @@ class OrdersController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/orders/findbyextref/{extRef}'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'extRef': {'value': ext_ref, 'encode': True}
-        })
+        _url_path = "/api/v1/orders/findbyextref/{extRef}"
+        _url_path = APIHelper.append_url_with_template_parameters(
+            _url_path, {"extRef": {"value": ext_ref, "encode": True}}
+        )
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'accept': 'application/json'
-        }
+        _headers = {"accept": "application/json"}
 
         # Prepare and execute request
         _request = self.config.http_client.get(_query_url, headers=_headers)
@@ -461,13 +442,14 @@ class OrdersController(BaseController):
         _response = self.execute_request(_request)
         self.validate_response(_response)
 
-        decoded = APIHelper.json_deserialize(_response.text, RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelOrder.from_dictionary)
+        decoded = APIHelper.json_deserialize(
+            _response.text,
+            RechnungsdruckWebAppControllersApiApiResultBillbeeInterfacesBillbeeAPIModelOrder.from_dictionary,
+        )
 
         return decoded
 
-    def order_api_update_state(self,
-                               id,
-                               model):
+    def order_api_update_state(self, id, model):
         """Does a PUT request to /api/v1/orders/{id}/orderstate.
 
         ### REMARKS ###
@@ -509,18 +491,14 @@ class OrdersController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/orders/{id}/orderstate'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'id': {'value': id, 'encode': True}
-        })
+        _url_path = "/api/v1/orders/{id}/orderstate"
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {"id": {"value": id, "encode": True}})
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'content-type': 'application/json; charset=utf-8'
-        }
+        _headers = {"content-type": "application/json; charset=utf-8"}
 
         # Prepare and execute request
         _request = self.config.http_client.put(_query_url, headers=_headers, parameters=APIHelper.json_serialize(model))
@@ -532,9 +510,7 @@ class OrdersController(BaseController):
 
         return decoded
 
-    def order_api_add_shipment(self,
-                               id,
-                               model):
+    def order_api_add_shipment(self, id, model):
         """Does a POST request to /api/v1/orders/{id}/shipment.
 
         Add a shipment to a given order
@@ -557,21 +533,19 @@ class OrdersController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/orders/{id}/shipment'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'id': {'value': id, 'encode': True}
-        })
+        _url_path = "/api/v1/orders/{id}/shipment"
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {"id": {"value": id, "encode": True}})
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'content-type': 'application/json; charset=utf-8'
-        }
+        _headers = {"content-type": "application/json; charset=utf-8"}
 
         # Prepare and execute request
-        _request = self.config.http_client.post(_query_url, headers=_headers, parameters=APIHelper.json_serialize(model))
+        _request = self.config.http_client.post(
+            _query_url, headers=_headers, parameters=APIHelper.json_serialize(model)
+        )
         BasicAuth.apply(self.config, _request)
         _response = self.execute_request(_request)
         self.validate_response(_response)
@@ -580,18 +554,20 @@ class OrdersController(BaseController):
 
         return decoded
 
-    def order_api_get_invoice_list(self,
-                                   min_invoice_date=None,
-                                   max_invoice_date=None,
-                                   page=None,
-                                   page_size=None,
-                                   shop_id=None,
-                                   order_state_id=None,
-                                   tag=None,
-                                   min_pay_date=None,
-                                   max_pay_date=None,
-                                   include_positions=None,
-                                   exclude_tags=None):
+    def order_api_get_invoice_list(
+        self,
+        min_invoice_date=None,
+        max_invoice_date=None,
+        page=None,
+        page_size=None,
+        shop_id=None,
+        order_state_id=None,
+        tag=None,
+        min_pay_date=None,
+        max_pay_date=None,
+        include_positions=None,
+        exclude_tags=None,
+    ):
         """Does a GET request to /api/v1/orders/invoices.
 
         Get a list of all invoices optionally filtered by date. This request
@@ -628,26 +604,23 @@ class OrdersController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/orders/invoices'
+        _url_path = "/api/v1/orders/invoices"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_parameters = {
-            'minInvoiceDate': APIHelper.when_defined(APIHelper.RFC3339DateTime, min_invoice_date),
-            'maxInvoiceDate': APIHelper.when_defined(APIHelper.RFC3339DateTime, max_invoice_date),
-            'page': page,
-            'pageSize': page_size,
-            'shopId': shop_id,
-            'orderStateId': order_state_id,
-            'tag': tag,
-            'minPayDate': APIHelper.when_defined(APIHelper.RFC3339DateTime, min_pay_date),
-            'maxPayDate': APIHelper.when_defined(APIHelper.RFC3339DateTime, max_pay_date),
-            'includePositions': include_positions,
-            'excludeTags': exclude_tags
+            "minInvoiceDate": APIHelper.when_defined(APIHelper.RFC3339DateTime, min_invoice_date),
+            "maxInvoiceDate": APIHelper.when_defined(APIHelper.RFC3339DateTime, max_invoice_date),
+            "page": page,
+            "pageSize": page_size,
+            "shopId": shop_id,
+            "orderStateId": order_state_id,
+            "tag": tag,
+            "minPayDate": APIHelper.when_defined(APIHelper.RFC3339DateTime, min_pay_date),
+            "maxPayDate": APIHelper.when_defined(APIHelper.RFC3339DateTime, max_pay_date),
+            "includePositions": include_positions,
+            "excludeTags": exclude_tags,
         }
-        _query_builder = APIHelper.append_url_with_query_parameters(
-            _query_builder,
-            _query_parameters
-        )
+        _query_builder = APIHelper.append_url_with_query_parameters(_query_builder, _query_parameters)
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare and execute request
@@ -660,9 +633,7 @@ class OrdersController(BaseController):
 
         return decoded
 
-    def order_api_find(self,
-                       id,
-                       partner):
+    def order_api_find(self, id, partner):
         """Does a GET request to /api/v1/orders/find/{id}/{partner}.
 
         Find a single order by its external id (order number)
@@ -684,11 +655,10 @@ class OrdersController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/orders/find/{id}/{partner}'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'id': {'value': id, 'encode': True},
-            'partner': {'value': partner, 'encode': True}
-        })
+        _url_path = "/api/v1/orders/find/{id}/{partner}"
+        _url_path = APIHelper.append_url_with_template_parameters(
+            _url_path, {"id": {"value": id, "encode": True}, "partner": {"value": partner, "encode": True}}
+        )
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
@@ -703,10 +673,7 @@ class OrdersController(BaseController):
 
         return decoded
 
-    def order_api_create_delivery_note(self,
-                                       id,
-                                       include_pdf=None,
-                                       send_to_cloud_id=None):
+    def order_api_create_delivery_note(self, id, include_pdf=None, send_to_cloud_id=None):
         """Does a POST request to /api/v1/orders/CreateDeliveryNote/{id}.
 
         Create an delivery note for an existing order. This request is extra
@@ -731,20 +698,12 @@ class OrdersController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/orders/CreateDeliveryNote/{id}'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'id': {'value': id, 'encode': True}
-        })
+        _url_path = "/api/v1/orders/CreateDeliveryNote/{id}"
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {"id": {"value": id, "encode": True}})
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
-        _query_parameters = {
-            'includePdf': include_pdf,
-            'sendToCloudId': send_to_cloud_id
-        }
-        _query_builder = APIHelper.append_url_with_query_parameters(
-            _query_builder,
-            _query_parameters
-        )
+        _query_parameters = {"includePdf": include_pdf, "sendToCloudId": send_to_cloud_id}
+        _query_builder = APIHelper.append_url_with_query_parameters(_query_builder, _query_parameters)
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare and execute request
@@ -757,11 +716,7 @@ class OrdersController(BaseController):
 
         return decoded
 
-    def order_api_create_invoice(self,
-                                 id,
-                                 include_invoice_pdf=None,
-                                 template_id=None,
-                                 send_to_cloud_id=None):
+    def order_api_create_invoice(self, id, include_invoice_pdf=None, template_id=None, send_to_cloud_id=None):
         """Does a POST request to /api/v1/orders/CreateInvoice/{id}.
 
         Create an invoice for an existing order. This request is extra
@@ -789,21 +744,16 @@ class OrdersController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/orders/CreateInvoice/{id}'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'id': {'value': id, 'encode': True}
-        })
+        _url_path = "/api/v1/orders/CreateInvoice/{id}"
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {"id": {"value": id, "encode": True}})
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_parameters = {
-            'includeInvoicePdf': include_invoice_pdf,
-            'templateId': template_id,
-            'sendToCloudId': send_to_cloud_id
+            "includeInvoicePdf": include_invoice_pdf,
+            "templateId": template_id,
+            "sendToCloudId": send_to_cloud_id,
         }
-        _query_builder = APIHelper.append_url_with_query_parameters(
-            _query_builder,
-            _query_parameters
-        )
+        _query_builder = APIHelper.append_url_with_query_parameters(_query_builder, _query_parameters)
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare and execute request
@@ -834,7 +784,7 @@ class OrdersController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/orders/PatchableFields'
+        _url_path = "/api/v1/orders/PatchableFields"
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
@@ -849,9 +799,7 @@ class OrdersController(BaseController):
 
         return decoded
 
-    def order_api_send_message(self,
-                               id,
-                               model):
+    def order_api_send_message(self, id, model):
         """Does a POST request to /api/v1/orders/{id}/send-message.
 
         Sends a message to the buyer
@@ -874,21 +822,19 @@ class OrdersController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/orders/{id}/send-message'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'id': {'value': id, 'encode': True}
-        })
+        _url_path = "/api/v1/orders/{id}/send-message"
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {"id": {"value": id, "encode": True}})
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'content-type': 'application/json; charset=utf-8'
-        }
+        _headers = {"content-type": "application/json; charset=utf-8"}
 
         # Prepare and execute request
-        _request = self.config.http_client.post(_query_url, headers=_headers, parameters=APIHelper.json_serialize(model))
+        _request = self.config.http_client.post(
+            _query_url, headers=_headers, parameters=APIHelper.json_serialize(model)
+        )
         BasicAuth.apply(self.config, _request)
         _response = self.execute_request(_request)
         self.validate_response(_response)
@@ -897,9 +843,7 @@ class OrdersController(BaseController):
 
         return decoded
 
-    def order_api_trigger_event(self,
-                                id,
-                                model):
+    def order_api_trigger_event(self, id, model):
         """Does a POST request to /api/v1/orders/{id}/trigger-event.
 
         Triggers a rule event
@@ -922,21 +866,19 @@ class OrdersController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/orders/{id}/trigger-event'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'id': {'value': id, 'encode': True}
-        })
+        _url_path = "/api/v1/orders/{id}/trigger-event"
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {"id": {"value": id, "encode": True}})
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'content-type': 'application/json; charset=utf-8'
-        }
+        _headers = {"content-type": "application/json; charset=utf-8"}
 
         # Prepare and execute request
-        _request = self.config.http_client.post(_query_url, headers=_headers, parameters=APIHelper.json_serialize(model))
+        _request = self.config.http_client.post(
+            _query_url, headers=_headers, parameters=APIHelper.json_serialize(model)
+        )
         BasicAuth.apply(self.config, _request)
         _response = self.execute_request(_request)
         self.validate_response(_response)
@@ -945,9 +887,7 @@ class OrdersController(BaseController):
 
         return decoded
 
-    def order_api_parse_placeholders(self,
-                                     id,
-                                     container):
+    def order_api_parse_placeholders(self, id, container):
         """Does a POST request to /api/v1/orders/{id}/parse-placeholders.
 
         Parses a text and replaces all placeholders
@@ -970,21 +910,19 @@ class OrdersController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/api/v1/orders/{id}/parse-placeholders'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
-            'id': {'value': id, 'encode': True}
-        })
+        _url_path = "/api/v1/orders/{id}/parse-placeholders"
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {"id": {"value": id, "encode": True}})
         _query_builder = self.config.get_base_uri()
         _query_builder += _url_path
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers
-        _headers = {
-            'content-type': 'application/json; charset=utf-8'
-        }
+        _headers = {"content-type": "application/json; charset=utf-8"}
 
         # Prepare and execute request
-        _request = self.config.http_client.post(_query_url, headers=_headers, parameters=APIHelper.json_serialize(container))
+        _request = self.config.http_client.post(
+            _query_url, headers=_headers, parameters=APIHelper.json_serialize(container)
+        )
         BasicAuth.apply(self.config, _request)
         _response = self.execute_request(_request)
         self.validate_response(_response)

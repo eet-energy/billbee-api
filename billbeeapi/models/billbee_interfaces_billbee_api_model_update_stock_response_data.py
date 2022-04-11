@@ -26,17 +26,13 @@ class BillbeeInterfacesBillbeeAPIModelUpdateStockResponseData(object):
 
     # Create a mapping from Model property names to API property names
     _names = {
-        "sku": 'SKU',
-        "current_stock": 'CurrentStock',
-        "unfulfilled_amount": 'UnfulfilledAmount',
-        "message": 'Message'
+        "sku": "SKU",
+        "current_stock": "CurrentStock",
+        "unfulfilled_amount": "UnfulfilledAmount",
+        "message": "Message",
     }
 
-    def __init__(self,
-                 sku=None,
-                 current_stock=None,
-                 unfulfilled_amount=None,
-                 message=None):
+    def __init__(self, sku=None, current_stock=None, unfulfilled_amount=None, message=None):
         """Constructor for the BillbeeInterfacesBillbeeAPIModelUpdateStockResponseData class"""
 
         # Initialize members of the class
@@ -46,8 +42,7 @@ class BillbeeInterfacesBillbeeAPIModelUpdateStockResponseData(object):
         self.message = message
 
     @classmethod
-    def from_dictionary(cls,
-                        dictionary):
+    def from_dictionary(cls, dictionary):
         """Creates an instance of this model from a dictionary
 
         Args:
@@ -63,13 +58,10 @@ class BillbeeInterfacesBillbeeAPIModelUpdateStockResponseData(object):
             return None
 
         # Extract variables from the dictionary
-        sku = dictionary.get('SKU')
-        current_stock = dictionary.get('CurrentStock')
-        unfulfilled_amount = dictionary.get('UnfulfilledAmount')
-        message = dictionary.get('Message')
+        sku = dictionary.get("SKU")
+        current_stock = dictionary.get("CurrentStock")
+        unfulfilled_amount = dictionary.get("UnfulfilledAmount")
+        message = dictionary.get("Message")
 
         # Return an object of this model
-        return cls(sku,
-                   current_stock,
-                   unfulfilled_amount,
-                   message)
+        return cls(sku, current_stock, unfulfilled_amount, message)

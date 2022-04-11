@@ -30,21 +30,15 @@ When you exceed these 2 calls, the API will return a HTTP 429 status code
 ### Install the Package
 
 The package is compatible with Python versions `2 >=2.7.9` and `3 >=3.4`.
-
-Download the wheel file an using the following pip command
+Install the package from PyPi using the following pip command:
 ```python
-pip install billbee_api-1.1.0-py3-none-any.whl
+pip install billbeeapi
 ```
 
 #### package note
 
-This is a fork from 
-https://pypi.python.org/pypi/billbee-1
-which you can install from PyPi using the following pip command.
-```python
-pip install billbee-api
-```
-But this package does not support API_KEYs 
+This is a fork from https://pypi.python.org/pypi/billbee-1
+The billbee-1 package which does not support API_KEYs.
 
 ### Initialize the API Client
 

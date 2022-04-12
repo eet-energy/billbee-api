@@ -202,8 +202,8 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 
 [metadata]
 lock-version = "1.1"
-python-versions = "^3.9"
-content-hash = "f5e8aa02ecc2c2cab6c55cf6386f17391d32e913c62d39c82a6a7a3f87dea86c"
+python-versions = "^3.8"
+content-hash = "546faa72ccc82dce0d0199b3a14ca2348a4ec28fdd1dae531a5a938ecc1cb350"
 
 [metadata.files]
 black = [
